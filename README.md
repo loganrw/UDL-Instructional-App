@@ -1,3 +1,8 @@
+## Local setup instructions
+* `git clone git@github.com:kanestapler/UDL-Instructional-App.git`
+* `cd UDL-Instructional-App`
+* `open JSU-Test.xcworkspace/` (This is important due to using CocoaPods for Firebase)
+
 ## UDL Instructional App Tasklist
 
 - - - -
