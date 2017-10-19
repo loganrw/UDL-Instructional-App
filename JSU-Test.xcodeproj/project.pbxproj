@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8059C4A81F99303500049FC5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8059C4A61F99303500049FC5 /* Model.swift */; };
+		8059C4A91F99303500049FC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8059C4A71F99303500049FC5 /* ViewController.swift */; };
 		805DC77B1F585228009FB46F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805DC77A1F585228009FB46F /* AppDelegate.swift */; };
-		805DC77D1F585228009FB46F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805DC77C1F585228009FB46F /* ViewController.swift */; };
-		805DC7801F585228009FB46F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805DC77E1F585228009FB46F /* Main.storyboard */; };
 		805DC7821F585228009FB46F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 805DC7811F585228009FB46F /* Assets.xcassets */; };
 		805DC7851F585228009FB46F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805DC7831F585228009FB46F /* LaunchScreen.storyboard */; };
-		805DC78D1F585260009FB46F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805DC78C1F585260009FB46F /* Model.swift */; };
+		80BDA7D61F992F6900BD3560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805DC77E1F585228009FB46F /* Main.storyboard */; };
 		DF23AB7ECD90A0B7347594DC /* Pods_JSU_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE17B192FF3A6503B0AA83E /* Pods_JSU_Test.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C40F17F764E29042F9D4487 /* Pods-JSU-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSU-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSU-Test/Pods-JSU-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		747FEACEE7DCD06F7C6B7EBA /* Pods-JSU-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSU-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSU-Test/Pods-JSU-Test.release.xcconfig"; sourceTree = "<group>"; };
+		8059C4A61F99303500049FC5 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8059C4A71F99303500049FC5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		805DC7771F585228009FB46F /* JSU-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JSU-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		805DC77A1F585228009FB46F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		805DC77C1F585228009FB46F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		805DC77F1F585228009FB46F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		805DC7811F585228009FB46F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		805DC7841F585228009FB46F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		805DC7861F585228009FB46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		805DC78C1F585260009FB46F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = ../Model.swift; sourceTree = "<group>"; };
 		DCE17B192FF3A6503B0AA83E /* Pods_JSU_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSU_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,15 +72,23 @@
 		805DC7791F585228009FB46F /* JSU-Test */ = {
 			isa = PBXGroup;
 			children = (
-				805DC77A1F585228009FB46F /* AppDelegate.swift */,
-				805DC77C1F585228009FB46F /* ViewController.swift */,
+				8059C4A61F99303500049FC5 /* Model.swift */,
+				8059C4A71F99303500049FC5 /* ViewController.swift */,
+				80BDA7D41F992E4300BD3560 /* Resources */,
 				805DC77E1F585228009FB46F /* Main.storyboard */,
-				805DC78C1F585260009FB46F /* Model.swift */,
+			);
+			path = "JSU-Test";
+			sourceTree = "<group>";
+		};
+		80BDA7D41F992E4300BD3560 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				805DC77A1F585228009FB46F /* AppDelegate.swift */,
 				805DC7811F585228009FB46F /* Assets.xcassets */,
 				805DC7831F585228009FB46F /* LaunchScreen.storyboard */,
 				805DC7861F585228009FB46F /* Info.plist */,
 			);
-			path = "JSU-Test";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		AC0C5DD18D8ADDC163F12C5D /* Frameworks */ = {
@@ -154,9 +162,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80BDA7D61F992F6900BD3560 /* Main.storyboard in Resources */,
 				805DC7851F585228009FB46F /* LaunchScreen.storyboard in Resources */,
 				805DC7821F585228009FB46F /* Assets.xcassets in Resources */,
-				805DC7801F585228009FB46F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,9 +247,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				805DC78D1F585260009FB46F /* Model.swift in Sources */,
-				805DC77D1F585228009FB46F /* ViewController.swift in Sources */,
+				8059C4A91F99303500049FC5 /* ViewController.swift in Sources */,
 				805DC77B1F585228009FB46F /* AppDelegate.swift in Sources */,
+				8059C4A81F99303500049FC5 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +417,7 @@
 				805DC78B1F585228009FB46F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
