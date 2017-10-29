@@ -1,0 +1,26 @@
+{
+    "Questions": [
+        {
+            "Question": "What is your favorite color",
+            "Answer": "Blue",
+            "AnswerOptions": [
+                "Red",
+                "Green",
+                "Blue",
+                "Yellow"
+            ],
+            "questionID": 0//Firebase doesn't do well with arrays. This might be needed at some point
+        },
+        {
+            "Question": "What is your favorite Ice Cream Flavor",
+            "Answer": "Vanilla",
+            "AnswerOptions": [
+                "Vanilla",
+                "Chocolate",
+                "Strawberry",
+                "Butter Pecan"
+            ],
+            "questionID": 1
+        }
+    ]
+}

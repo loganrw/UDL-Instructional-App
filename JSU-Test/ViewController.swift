@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
+    
+    var rootRef: DatabaseReference!
 
     @IBAction func textFieldButton(_ sender: UIButton) {
         print("Custom Text Created")
@@ -26,6 +29,19 @@ class ViewController: UIViewController {
     
     @IBAction func answerButton(_ sender: UIButton) {
         print("Answer button created")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        rootRef = Database.database().reference()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let questionsRef = rootRef.child("Questions")
+        questionsRef.observe(.value) { (snap: DataSnapshot) in
+            print(snap)
+        }
     }
     
 
