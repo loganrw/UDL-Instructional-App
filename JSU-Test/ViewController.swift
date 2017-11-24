@@ -12,23 +12,40 @@ import Firebase
 class ViewController: UIViewController {
     
     var rootRef: DatabaseReference!
-
+    var imageView = UIImageView(frame: CGRect(x: 100, y: 4525, width: 400, height: 400))
+    
     @IBAction func textFieldButton(_ sender: UIButton) {
-        print("Custom Text Created")
+        let customTextField = customQuestionField()
+        customTextField.addTextField(sender: self)
+        //print("Custom Text Created")
     }
     
     @IBAction func questionFieldButton(_ sender: UIButton) {
         let customQuestion = customQuestionField()
-        customQuestion.createQuestion()
+        customQuestion.createPrompt(type: "Question")
         customQuestion.showQuestionPrompt(sender: self)
     }
     
     @IBAction func imageButton(_ sender: UIButton) {
         print("Image created")
+        let customImage = customQuestionField()
+        customImage.addPicture(sender: self)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        imageView.image = image
+        
+        self.dismiss(animated: true, completion: { () -> Void in
+        })
+        self.imageView.image = image;
     }
     
     @IBAction func answerButton(_ sender: UIButton) {
         print("Answer button created")
+        let customAnswer = customQuestionField()
+        customAnswer.createPrompt(type: "Answer")
+        customAnswer.showAnswerPrompt(sender: self)
+        customAnswer.makeDeletable(item: "Answer")
     }
     
     override func viewDidLoad() {
@@ -43,7 +60,6 @@ class ViewController: UIViewController {
             print(snap)
         }
     }
-    
 
 }
 
