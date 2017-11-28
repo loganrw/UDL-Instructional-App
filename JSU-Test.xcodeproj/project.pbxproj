@@ -13,8 +13,8 @@
 		805DC7821F585228009FB46F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 805DC7811F585228009FB46F /* Assets.xcassets */; };
 		805DC7851F585228009FB46F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805DC7831F585228009FB46F /* LaunchScreen.storyboard */; };
 		8083E4901FB2D2B0002EC66C /* logInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083E48F1FB2D2B0002EC66C /* logInController.swift */; };
-		80AD0E9A1FB2E8CE0018541F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80AD0E991FB2E8CE0018541F /* GoogleService-Info.plist */; };
 		80BDA7D61F992F6900BD3560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805DC77E1F585228009FB46F /* Main.storyboard */; };
+		8CED942C1FCD23A000499A0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CED942B1FCD23A000499A0F /* GoogleService-Info.plist */; };
 		DF23AB7ECD90A0B7347594DC /* Pods_JSU_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE17B192FF3A6503B0AA83E /* Pods_JSU_Test.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		805DC7841F585228009FB46F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		805DC7861F585228009FB46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8083E48F1FB2D2B0002EC66C /* logInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInController.swift; sourceTree = "<group>"; };
-		80AD0E991FB2E8CE0018541F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8CED942B1FCD23A000499A0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DCE17B192FF3A6503B0AA83E /* Pods_JSU_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSU_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,7 +88,7 @@
 		80BDA7D41F992E4300BD3560 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				80AD0E991FB2E8CE0018541F /* GoogleService-Info.plist */,
+				8CED942B1FCD23A000499A0F /* GoogleService-Info.plist */,
 				805DC77A1F585228009FB46F /* AppDelegate.swift */,
 				805DC7811F585228009FB46F /* Assets.xcassets */,
 				805DC7831F585228009FB46F /* LaunchScreen.storyboard */,
@@ -169,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80BDA7D61F992F6900BD3560 /* Main.storyboard in Resources */,
-				80AD0E9A1FB2E8CE0018541F /* GoogleService-Info.plist in Resources */,
+				8CED942C1FCD23A000499A0F /* GoogleService-Info.plist in Resources */,
 				805DC7851F585228009FB46F /* LaunchScreen.storyboard in Resources */,
 				805DC7821F585228009FB46F /* Assets.xcassets in Resources */,
 			);
