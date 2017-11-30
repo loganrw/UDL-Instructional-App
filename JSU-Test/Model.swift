@@ -18,6 +18,7 @@ class customQuestionField: UIViewController {
     var customAnswer = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
     var customLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
     var customTextField = UITextView(frame: CGRect(x: 100, y: 475, width: 200, height: 50))
+    var gesture = UIPanGestureRecognizer(target: self, action: Selector(("userDragged:")))
     let imagePicker = UIImagePickerController()
     
     //Creates a label that can serve as a question or statement. Called by the View.
@@ -104,6 +105,7 @@ class customQuestionField: UIViewController {
     //Adds a text field for multi-line input
     func addTextField(sender: UIViewController){
         customTextField.isEditable = true
+        customTextField.addGestureRecognizer(gesture)
         customTextField.backgroundColor = UIColor .lightGray
         sender.view.addSubview(customTextField)
     }
@@ -114,27 +116,10 @@ class customQuestionField: UIViewController {
         sender.view.addSubview(customAnswer)
     }
     
-    func makeDeletable(item: String){
-        switch item {
-        case "Answer":
-            print("Deleted Answer")
-            let holdToDelete = UILongPressGestureRecognizer(target: customAnswer, action: Selector(("longPressDelete")));
-            holdToDelete.minimumPressDuration = 0.5
-            customAnswer.addGestureRecognizer(holdToDelete)
-        default:
-            print("No Such Item")
-        }
-    }
-    
-    func longPressDelete(sender: UILongPressGestureRecognizer) {
-        let alert: UIAlertController = UIAlertController(title: "Please Confirm", message: "Are you sure you want to delete this Element?", preferredStyle: .alert);
-        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { (UIAlertAction) -> Void in
-            if self.customAnswer.text != nil {
-                self.customAnswer.removeFromSuperview()
-            }
-        }));
-        alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil));
-        self.present(alert, animated: true, completion: nil);
+    func userDragged(gesture: UIPanGestureRecognizer){
+        var loc = gesture.location(in: self.view)
+        self.customTextField.center = loc
+        
     }
     
 }

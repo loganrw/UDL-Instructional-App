@@ -13,22 +13,24 @@ class ViewController: UIViewController {
     
     var rootRef: DatabaseReference!
     var imageView = UIImageView(frame: CGRect(x: 100, y: 4525, width: 400, height: 400))
+    let customQuestion = customQuestionField()
+    let customImage = customQuestionField()
+    let customAnswer = customQuestionField()
+    let customTextField = customQuestionField()
     
     @IBAction func textFieldButton(_ sender: UIButton) {
-        let customTextField = customQuestionField()
+        
         customTextField.addTextField(sender: self)
         //print("Custom Text Created")
     }
     
     @IBAction func questionFieldButton(_ sender: UIButton) {
-        let customQuestion = customQuestionField()
         customQuestion.createPrompt(type: "Question")
         customQuestion.showQuestionPrompt(sender: self)
     }
     
     @IBAction func imageButton(_ sender: UIButton) {
         print("Image created")
-        let customImage = customQuestionField()
         customImage.addPicture(sender: self)
     }
     
@@ -42,10 +44,8 @@ class ViewController: UIViewController {
     
     @IBAction func answerButton(_ sender: UIButton) {
         print("Answer button created")
-        let customAnswer = customQuestionField()
         customAnswer.createPrompt(type: "Answer")
         customAnswer.showAnswerPrompt(sender: self)
-        customAnswer.makeDeletable(item: "Answer")
     }
     
     override func viewDidLoad() {
@@ -60,6 +60,8 @@ class ViewController: UIViewController {
             print(snap)
         }
     }
+    
+    
 
 }
 
