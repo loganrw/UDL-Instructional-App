@@ -41,6 +41,9 @@ class ViewController: UIViewController {
         })
         self.imageView.image = image;
     }
+    @IBAction func logOut(_ sender: UIButton) {
+        presentStoryboard(boardName: "logInView")
+    }
     
     @IBAction func answerButton(_ sender: UIButton) {
         print("Answer button created")
@@ -61,7 +64,11 @@ class ViewController: UIViewController {
         }
     }
     
-    
+    func presentStoryboard(boardName: String){
+        let storyboard:UIStoryboard = UIStoryboard(name: boardName, bundle: nil)
+        let loggedInVC:UIViewController = storyboard.instantiateViewController(withIdentifier: boardName)
+        self.present(loggedInVC, animated: true, completion: nil)
+    }
 
 }
 

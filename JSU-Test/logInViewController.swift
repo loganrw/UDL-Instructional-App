@@ -8,43 +8,56 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
+import Firebase
 
 
 class logInViewController: UIViewController {
     
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    var ref: DatabaseReference!
+    var isInstructor = false
     
-    
+
     @IBAction func logInPressed(_ sender: UIButton) {
         if let email = emailField.text, let password = passwordField.text{
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 if let fireBaseError = error{
                     print(fireBaseError.localizedDescription)
                     return
+                }else{
+                    self.ref = Database.database().reference()
+                   self.ref?.child("Users").child(user!.uid).child("instructor").observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    if let item = snapshot.value as? Bool{
+                        self.isInstructor = item
+                    }
+                    
+                    if(self.isInstructor){
+                        self.presentStoryboard(boardName: "Main")
+                    }else{
+                        print("Student Log In")
+                    }
+                    
+                    })
+
                 }
-                self.presentLogIn()
-            })
-        }        
-    }
-    
-    @IBAction func signUpPressed(_ sender: UIButton) {
-        if let email = emailField.text, let password = passwordField.text{
-                Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                    if let fireBaseError = error{
-                        print(fireBaseError.localizedDescription)
-                    return
-                }
-                print("Account Created")
             })
         }
     }
     
-    func presentLogIn(){
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loggedInVC:ViewController = storyboard.instantiateViewController(withIdentifier: "Main") as! ViewController
-        self.present(loggedInVC, animated: true, completion: nil)
+    @IBAction func createAccountPressed(_ sender: UIButton) {
+        presentStoryboard(boardName: "signUp")
     }
     
+    func presentStoryboard(boardName: String){
+        let storyboard:UIStoryboard = UIStoryboard(name: boardName, bundle: nil)
+        let loggedInVC:UIViewController = storyboard.instantiateViewController(withIdentifier: boardName)
+        self.present(loggedInVC, animated: true, completion: nil)
+    }
+
 }
+
+
+

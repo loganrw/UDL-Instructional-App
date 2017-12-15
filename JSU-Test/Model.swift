@@ -116,11 +116,6 @@ class customQuestionField: UIViewController {
         sender.view.addSubview(customAnswer)
     }
     
-    func userDragged(gesture: UIPanGestureRecognizer){
-        var loc = gesture.location(in: self.view)
-        self.customTextField.center = loc
-        
-    }
     
 }
 
