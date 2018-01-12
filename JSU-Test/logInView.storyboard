@@ -97,7 +97,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="createAccountPressed:" destination="ue0-Wy-ahf" eventType="touchUpInside" id="13w-jr-StY"/>
+                                    <action selector="newAccountPressed:" destination="ue0-Wy-ahf" eventType="touchUpInside" id="LgX-SY-Dyx"/>
                                 </connections>
                             </button>
                         </subviews>

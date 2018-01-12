@@ -19,6 +19,10 @@ class logInViewController: UIViewController {
     var ref: DatabaseReference!
     var isInstructor = false
     
+    @IBAction func newAccountPressed(_ sender: UIButton) {
+        self.presentStoryboard(boardName: "signUp")
+    }
+    
 
     @IBAction func logInPressed(_ sender: UIButton) {
         if let email = emailField.text, let password = passwordField.text{
@@ -28,29 +32,24 @@ class logInViewController: UIViewController {
                     return
                 }else{
                     self.ref = Database.database().reference()
-                   self.ref?.child("Users").child(user!.uid).child("instructor").observeSingleEvent(of: .value, with: { (snapshot) in
-                    
-                    if let item = snapshot.value as? Bool{
-                        self.isInstructor = item
-                    }
-                    
-                    if(self.isInstructor){
-                        self.presentStoryboard(boardName: "Main")
-                    }else{
-                        print("Student Log In")
-                    }
-                    
+                    self.ref?.child("Users").child(user!.uid).child("instructor").observeSingleEvent(of: .value, with: { (snapshot) in
+                        
+                        if let item = snapshot.value as? Bool{
+                            self.isInstructor = item
+                        }
+                        
+                        if(self.isInstructor){
+                            self.presentStoryboard(boardName: "Main")
+                        }else{
+                            self.presentStoryboard(boardName: "studentLogIn")
+                        }
                     })
-
                 }
             })
         }
     }
     
-    @IBAction func createAccountPressed(_ sender: UIButton) {
-        presentStoryboard(boardName: "signUp")
-    }
-    
+
     func presentStoryboard(boardName: String){
         let storyboard:UIStoryboard = UIStoryboard(name: boardName, bundle: nil)
         let loggedInVC:UIViewController = storyboard.instantiateViewController(withIdentifier: boardName)
@@ -58,6 +57,3 @@ class logInViewController: UIViewController {
     }
 
 }
-
-
-

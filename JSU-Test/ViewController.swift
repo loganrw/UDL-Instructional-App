@@ -12,11 +12,37 @@ import Firebase
 class ViewController: UIViewController {
     
     var rootRef: DatabaseReference!
+    @IBOutlet weak var slideView: UIView!
+
+    @IBOutlet weak var leadingC: NSLayoutConstraint!
+    @IBOutlet weak var trailingC: NSLayoutConstraint!
     var imageView = UIImageView(frame: CGRect(x: 100, y: 4525, width: 400, height: 400))
     let customQuestion = customQuestionField()
     let customImage = customQuestionField()
     let customAnswer = customQuestionField()
     let customTextField = customQuestionField()
+    var menuVisable = false
+    
+    @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
+        if(!menuVisable){
+            leadingC.constant = 150
+            trailingC.constant = -150
+            menuVisable = true
+            
+        }else{
+            leadingC.constant = -20
+            trailingC.constant = -20
+            menuVisable = false
+        }
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations:{
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+  
+    
+    
     
     @IBAction func textFieldButton(_ sender: UIButton) {
         
