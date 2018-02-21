@@ -4,6 +4,14 @@
 * `cd UDL-Instructional-App`
 * `open JSU-Test.xcworkspace/` (This is important due to using CocoaPods for Firebase)
 
+- - - -
+## Development
+
+#### Fork and work on only the development branch! Only push your changes from your fork to the development branch. The changes will be merged only after testing the version on the development branch. Make sure to leave a commit message describing any large changes. 
+
+
+- - - -
+
 ## UDL Instructional App Tasklist
 
 - - - -
