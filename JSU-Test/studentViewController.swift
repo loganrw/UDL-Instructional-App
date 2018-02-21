@@ -11,14 +11,14 @@ import UIKit
 import Firebase
 
 class studentViewController: UIViewController {
-
+    
     
     @IBOutlet weak var studentView: UIView!
     @IBOutlet weak var leadingC: NSLayoutConstraint!
     @IBOutlet weak var trailingC: NSLayoutConstraint!
-
-
     var menuVisable = false;
+    
+    
     
     @IBAction func logOutPressed(_ sender: UIButton) {
         self.presentStoryboard(boardName: "logInView")
@@ -45,10 +45,15 @@ class studentViewController: UIViewController {
         self.presentStoryboard(boardName: "quizView")
     }
     
+
+
+    
     func presentStoryboard(boardName: String){
         let storyboard:UIStoryboard = UIStoryboard(name: boardName, bundle: nil)
         let loggedInVC:UIViewController = storyboard.instantiateViewController(withIdentifier: boardName)
         self.present(loggedInVC, animated: true, completion: nil)
     }
+    
+
 
 }

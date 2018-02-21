@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Firebase
 
-
 class logInViewController: UIViewController {
     
     
@@ -18,6 +17,7 @@ class logInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     var ref: DatabaseReference!
     var isInstructor = false
+    
     
     @IBAction func newAccountPressed(_ sender: UIButton) {
         self.presentStoryboard(boardName: "signUp")

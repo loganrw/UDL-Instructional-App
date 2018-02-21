@@ -2,121 +2,144 @@
 //  Model.swift
 //  JSU-Test
 //
-//  Created by Logan Watkins on 8/31/17.
-//  Copyright © 2017 Logan Watkins. All rights reserved.
+//  Created by acns on 2/14/18.
+//  Copyright © 2018 Logan Watkins. All rights reserved.
 //
 
-import UIKit
 import Foundation
+import UIKit
 
-class customQuestionField: UIViewController {
+class quizItem: UIViewController{
+    
+    var alert = UIAlertController()
+    let longPress = UILongPressGestureRecognizer(target: self, action: #selector(userLongPress(sender:)))
+    let moveGesture = UIPanGestureRecognizer(target: self, action: #selector(userDragged(sender:)))
     
     
-    //Globals
-    var questionPrompt = UIAlertController()
-    var answerPrompt = UIAlertController()
-    var customAnswer = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
-    var customLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
-    var customTextField = UITextView(frame: CGRect(x: 100, y: 475, width: 200, height: 50))
-    var gesture = UIPanGestureRecognizer(target: self, action: Selector(("userDragged:")))
-    let imagePicker = UIImagePickerController()
     
-    //Creates a label that can serve as a question or statement. Called by the View.
-    func createPrompt(type: String){
-        
-        //print("Question field created")
-        
-        //Set up the labels and make them draggable
-        //Question
-        customLabel.center = CGPoint(x: 175, y: 450)
-        customLabel.textAlignment = .center
-        customLabel.textColor = UIColor .black
-        customLabel.adjustsFontSizeToFitWidth = true
-        customLabel.isUserInteractionEnabled = true
-        //Answer
-        customAnswer.center = CGPoint(x: 175, y: 500)
-        customAnswer.textAlignment = .center
-        customAnswer.textColor = UIColor .black
-        customAnswer.adjustsFontSizeToFitWidth = true
-        customAnswer.isUserInteractionEnabled = true
-        
-        if(type == "Question"){
-            //Create the prompt for when the user selects the "Add Question" button
-            questionPrompt = UIAlertController(title: "Enter a question:", message: nil, preferredStyle: .alert)
+    
+    
+    func createQuizItem(item: String){
+        switch item {
             
-            /*Add the actions that happen when the user presses the confirm button.
-             The label will be updated; removed if cancel is pressed or set to the
-             "textField" variable's value on confirm.
-             */
-            questionPrompt.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
-                let textField = self.questionPrompt.textFields![0] as UITextField
-                //print("Text field: \(textField.text ?? "No Value")")
-                self.customLabel.text = textField.text!
+        case "Answer":
+            //print("Answer Created")
+            //Prepare the quiz item
+            let answerLabel = UILabel(frame: CGRect(x: 200, y: 200, width: 300, height: 20))
+            answerLabel.isUserInteractionEnabled = true
+            answerLabel.textColor = UIColor .black
+            answerLabel.addGestureRecognizer(self.longPressGesture())
+            answerLabel.addGestureRecognizer(self.movePanGesture())
+            topViewController()?.view.addSubview(answerLabel)
+            //Create the prompt for when the user selects the "Add Answer" button
+            alert = UIAlertController(title: "Enter an answer:", message: nil, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
+                let textField = self.alert.textFields![0] as UITextField
+                answerLabel.text = textField.text
+                
             }))
-            
-            questionPrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel){(_) in
-                self.customLabel.removeFromSuperview()
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){(_) in
+                answerLabel.removeFromSuperview()
             })
-            
-            
-            //Add the text field that the user fills out
-            questionPrompt.addTextField{ (textField) in
-                textField.placeholder = "Enter your question.."
-            }
-        }
-        
-        if(type == "Answer"){
-            //Answer Selected
-            answerPrompt = UIAlertController(title: "Enter an answer:", message: nil, preferredStyle: .alert)
-            
-            answerPrompt.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
-                let textField = self.answerPrompt.textFields![0] as UITextField
-                //print("Text field: \(textField.text ?? "No Value")")
-                self.customAnswer.text = textField.text!
-            }))
-            
-            answerPrompt.addAction(UIAlertAction(title: "Cancel", style: .cancel){(_) in
-                self.customAnswer.removeFromSuperview()
-            })
-            
-            answerPrompt.addTextField{ (textField) in
+            alert.addTextField{ (textField) in
                 textField.placeholder = "Enter your answer.."
             }
+            
+            topViewController()?.present(alert, animated: true, completion: nil)
+            
+            
+        case "textField":
+            let randTextField = UITextField(frame: CGRect(x: 200, y: 200, width: 300, height: 35))
+            randTextField.isUserInteractionEnabled = true
+            randTextField.backgroundColor = UIColor .lightGray
+            randTextField.placeholder = "Enter your message..."
+            randTextField.addGestureRecognizer(self.longPressGesture())
+            randTextField.addGestureRecognizer(self.movePanGesture())
+            topViewController()?.view.addSubview(randTextField)
+            
+            
+            
+        case "Question":
+            //print("Question Created")
+            //Prepare the quiz item
+            let questionLabel = UILabel(frame: CGRect(x: 200, y: 200, width: 300, height: 20))
+            questionLabel.isUserInteractionEnabled = true
+            questionLabel.textColor = UIColor .black
+            questionLabel.addGestureRecognizer(self.longPressGesture())
+            questionLabel.addGestureRecognizer(self.movePanGesture())
+            topViewController()?.view.addSubview(questionLabel)
+            //Create the prompt for when the user selects the "Add Question" button
+            alert = UIAlertController(title: "Enter an question:", message: nil, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
+                let textField = self.alert.textFields![0] as UITextField
+                questionLabel.text = textField.text
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){(_) in
+                questionLabel.removeFromSuperview()
+            })
+            alert.addTextField{ (textField) in
+                textField.placeholder = "Enter your answer.."
+            }
+            
+            topViewController()?.present(alert, animated: true, completion: nil)
+            
+            
+        case "Image":
+            print("Image Created")
+            
+        default:
+            print("Unrecognized Quiz Type")
         }
+    }
+    
+    
+    func longPressGesture() -> UILongPressGestureRecognizer {
+        let lpg = UILongPressGestureRecognizer(target: self, action: #selector(userLongPress(sender:)))
+        lpg.minimumPressDuration = 0.5
+        return lpg
+    }
+    
+    func movePanGesture() -> UIPanGestureRecognizer {
+        let mpg = UIPanGestureRecognizer(target: self, action: #selector(userDragged(sender:)))
+        return mpg
+    }
+    
+    @objc func userLongPress(sender: UILongPressGestureRecognizer){
+        if(sender.state == .began){
+            alert = UIAlertController(title: "Remove Item?", message: nil, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
+                let selectedView = sender.view
+                selectedView?.removeFromSuperview()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "No", style: .cancel){(_) in
+                
+            })
+            
+            topViewController()?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func userDragged(sender: UIPanGestureRecognizer){
+        let loc = sender.location(in: self.view)
+        let selectedView = sender.view
+        selectedView?.center = loc
         
     }
     
-    //Takes a ViewController and adds the prompt and label
-    func showQuestionPrompt(sender:UIViewController){
-        
-        sender.present(questionPrompt, animated: true, completion: nil)
-        sender.view.addSubview(customLabel)
+    
+    func topViewController() -> UIViewController? {
+        guard var topViewController = UIApplication.shared.keyWindow?.rootViewController else { return nil }
+        while topViewController.presentedViewController != nil {
+            topViewController = topViewController.presentedViewController!
+        }
+        return topViewController
     }
     
-    func addPicture(sender: UIViewController){
-        imagePicker.delegate = sender as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        sender.present(imagePicker, animated: true, completion: nil)
-    }
-
-    
-    
-    //Adds a text field for multi-line input
-    func addTextField(sender: UIViewController){
-        customTextField.isEditable = true
-        customTextField.addGestureRecognizer(gesture)
-        customTextField.backgroundColor = UIColor .lightGray
-        sender.view.addSubview(customTextField)
-    }
-    
-    func showAnswerPrompt(sender: UIViewController){
-        sender.present(answerPrompt, animated: true, completion: nil)
-        customAnswer.isUserInteractionEnabled = true;
-        sender.view.addSubview(customAnswer)
-    }
     
     
 }
-
-

@@ -28,6 +28,8 @@
 	<string>$(PRODUCT_NAME) uses Photo Library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses Bluetooth</string>
 	<key>UIMainStoryboardFile</key>
 	<string>logInView</string>
 	<key>UIRequiredDeviceCapabilities</key>
