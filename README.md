@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Local setup instructions
 * `git clone git@github.com:kanestapler/UDL-Instructional-App.git`
 * `cd UDL-Instructional-App`
@@ -22,3 +23,7 @@
   
   * Possibly, add a leaderboard for the students to view based on performance
     
+=======
+# UDL-Instructional-App
+A learning app designed to help teachers and students in the class room. 
+>>>>>>> a7cf61129d8c6360dd8ed70600b91aca8465c412
