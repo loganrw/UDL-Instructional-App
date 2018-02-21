@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 ## Local setup instructions
-* `git clone git@github.com:kanestapler/UDL-Instructional-App.git`
+* `git clone git@github.com:loganrw/UDL-Instructional-App.git`
 * `cd UDL-Instructional-App`
 * `open JSU-Test.xcworkspace/` (This is important due to using CocoaPods for Firebase)
 
@@ -20,10 +20,5 @@
   material already created for students to view
   
   * Implement a panel for students as well to track preformance statistics
-  
-  * Possibly, add a leaderboard for the students to view based on performance
-    
-=======
-# UDL-Instructional-App
-A learning app designed to help teachers and students in the class room. 
->>>>>>> a7cf61129d8c6360dd8ed70600b91aca8465c412
+ 
+   
