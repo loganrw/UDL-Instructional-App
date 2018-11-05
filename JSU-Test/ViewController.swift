@@ -64,7 +64,15 @@ class ViewController: UIViewController{
     }
     
     override func viewDidLoad() {
-        
+        self.rootRef = Database.database().reference()
+        self.rootRef?.child("Users").child((Auth.auth().currentUser?.uid)!).child("newUser").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let item = snapshot.value as? Bool{
+                if item == true{
+                    self.presentStoryboard(boardName: "newInstructor")
+                }
+            }
+        })
     }
     
     //Custom function to present certain story boards.

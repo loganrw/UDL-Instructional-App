@@ -18,6 +18,8 @@ class studentViewController: UIViewController {
     @IBOutlet weak var trailingC: NSLayoutConstraint!
     var menuVisable = false;
     
+    var rootRef: DatabaseReference!
+    
     
     
     @IBAction func logOutPressed(_ sender: UIButton) {
@@ -45,7 +47,23 @@ class studentViewController: UIViewController {
         self.presentStoryboard(boardName: "quizView")
     }
     
-
+    @IBAction func studentInfoPressed(_ sender: UIButton) {
+        self.presentStoryboard(boardName: "studentInfo")
+    }
+    
+    
+    override func viewDidLoad() {
+        self.rootRef = Database.database().reference()
+        self.rootRef?.child("Users").child((Auth.auth().currentUser?.uid)!).child("newUser").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let item = snapshot.value as? Bool{
+                if item == true{
+                    self.presentStoryboard(boardName: "newStudent")
+                }
+            }
+        })
+    }
+    
 
     
     func presentStoryboard(boardName: String){

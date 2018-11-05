@@ -17,8 +17,6 @@ class quizItem: UIViewController{
     
     
     
-    
-    
     func createQuizItem(item: String){
         switch item {
             

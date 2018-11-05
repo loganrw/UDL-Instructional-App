@@ -39,9 +39,8 @@ class signUpViewController: UIViewController {
                 }
                 
                 let uid = user?.uid
-                let values = ["email": self.emailField.text!, "instructor": self.isInstructor.isOn] as [String : Any]
+                let values = ["email": self.emailField.text!, "instructor": self.isInstructor.isOn, "newUser": true] as [String : Any]
                 self.registerUserIntoDatabase(uid!, values: values as [String : AnyObject])
-                
                 let alert = UIAlertController(title: "Account Created", message: "You are now able to log in.", preferredStyle: UIAlertControllerStyle.alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{ action in switch action.style{
@@ -74,7 +73,7 @@ class signUpViewController: UIViewController {
                 print(err!)
                 return
             }
-            print("Successfully Added a New User to the Database")
+            //print("Successfully Added a New User to the Database")
         })
     }
 }

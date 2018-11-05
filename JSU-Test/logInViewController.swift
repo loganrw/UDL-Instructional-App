@@ -17,6 +17,7 @@ class logInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     var ref: DatabaseReference!
     var isInstructor = false
+    var isNewUser = false
     
     
     @IBAction func newAccountPressed(_ sender: UIButton) {
@@ -39,11 +40,12 @@ class logInViewController: UIViewController {
                         }
                         
                         if(self.isInstructor){
-                            self.presentStoryboard(boardName: "Main")
-                        }else{
-                            self.presentStoryboard(boardName: "studentLogIn")
-                        }
+                                self.presentStoryboard(boardName: "Main")
+                            }else{
+                                self.presentStoryboard(boardName: "studentLogIn")
+                            }
                     })
+                    
                 }
             })
         }
