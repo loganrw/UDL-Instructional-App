@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="UDLbackground" highlightedImage="logInBox" translatesAutoresizingMaskIntoConstraints="NO" id="sgC-z5-DiN" userLabel="UDLbackground">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="udlBg" highlightedImage="logInBox" translatesAutoresizingMaskIntoConstraints="NO" id="sgC-z5-DiN" userLabel="udlBg">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -35,7 +35,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UDLbackground" width="1536" height="2048"/>
         <image name="logInBox" width="375" height="667"/>
+        <image name="udlBg" width="1536" height="2048"/>
     </resources>
 </document>
