@@ -97,7 +97,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="147-BA-pwf">
                                 <rect key="frame" x="347" y="712" width="141" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.86274509799999999" green="0.23529411759999999" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.3517770469" green="0.72940140959999999" blue="0.78906279800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,7 +107,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.84127141497461932" green="0.84127141497461932" blue="0.84127141497461932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rYK-eN-BZh" firstAttribute="centerX" secondItem="lch-UE-XqG" secondAttribute="centerX" id="BTu-Kb-8Xc"/>
                             <constraint firstItem="rYK-eN-BZh" firstAttribute="top" secondItem="Am3-LN-0FZ" secondAttribute="top" constant="60" id="phy-UK-07J"/>

@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Learn</string>
+	<string>WeLearn</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -22,14 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses Bluetooth</string>
 	<key>NSCameraUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses Cameras</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) uses Photo Library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>$(PRODUCT_NAME) uses Bluetooth</string>
 	<key>UIMainStoryboardFile</key>
 	<string>logInView</string>
 	<key>UIRequiredDeviceCapabilities</key>
