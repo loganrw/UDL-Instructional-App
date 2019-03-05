@@ -112,6 +112,9 @@
                                         <state key="normal" title="Student Information">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="bev-Dy-UST" kind="show" id="Pjx-aw-8sL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwv-4N-gIs">
                                         <rect key="frame" x="8" y="120" width="287" height="45"/>
@@ -172,26 +175,39 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zg6-aG-p83">
-                                        <rect key="frame" x="8" y="351" width="49" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zg6-aG-p83">
+                                        <rect key="frame" x="214" y="339" width="51" height="31"/>
                                     </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpM-fg-89k">
+                                        <rect key="frame" x="8" y="332" width="287" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Zuy-Vr-kpa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Switch Enabled:">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.3517770469" green="0.72940140959999999" blue="0.78906279800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="tMg-DN-1ry" firstAttribute="leading" secondItem="vcC-Bd-re5" secondAttribute="leading" id="5HH-ug-cEW"/>
+                                    <constraint firstItem="HpM-fg-89k" firstAttribute="leading" secondItem="o4A-D7-UeV" secondAttribute="leading" id="7lI-Kf-Zgm"/>
                                     <constraint firstItem="KAM-8E-MPt" firstAttribute="leading" secondItem="vcC-Bd-re5" secondAttribute="leading" constant="8" id="9Uj-aj-d1k"/>
                                     <constraint firstItem="2xg-QV-3UD" firstAttribute="leading" secondItem="vcC-Bd-re5" secondAttribute="leading" constant="8" id="C0q-ca-Qv4"/>
                                     <constraint firstItem="7oC-gq-F6k" firstAttribute="leading" secondItem="vcC-Bd-re5" secondAttribute="leading" constant="8" id="Mvi-zN-cVZ"/>
                                     <constraint firstAttribute="trailing" secondItem="tMg-DN-1ry" secondAttribute="trailing" id="O2y-Ob-mNj"/>
                                     <constraint firstItem="o4A-D7-UeV" firstAttribute="leading" secondItem="vcC-Bd-re5" secondAttribute="leading" constant="8" id="OY3-em-CPK"/>
                                     <constraint firstItem="hKP-G8-ukI" firstAttribute="leading" secondItem="vcC-Bd-re5" secondAttribute="leading" constant="8" id="ObV-Oh-ZfY"/>
+                                    <constraint firstItem="HpM-fg-89k" firstAttribute="top" secondItem="o4A-D7-UeV" secondAttribute="bottom" constant="8" symbolic="YES" id="Otl-bf-bG6"/>
                                     <constraint firstAttribute="trailing" secondItem="2xg-QV-3UD" secondAttribute="trailing" id="Q70-bM-Vdo"/>
                                     <constraint firstAttribute="trailing" secondItem="o4A-D7-UeV" secondAttribute="trailing" id="QdG-bH-Uz3"/>
                                     <constraint firstItem="hKP-G8-ukI" firstAttribute="top" secondItem="gwv-4N-gIs" secondAttribute="bottom" constant="8" id="SBx-tM-gZh"/>
                                     <constraint firstAttribute="width" constant="295" id="TUJ-dp-FnO"/>
                                     <constraint firstAttribute="trailing" secondItem="gwv-4N-gIs" secondAttribute="trailing" id="U3E-DV-Qmi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zg6-aG-p83" secondAttribute="trailing" constant="32" id="UVS-fT-wc7"/>
                                     <constraint firstItem="7oC-gq-F6k" firstAttribute="top" secondItem="vcC-Bd-re5" secondAttribute="top" constant="8" id="Vfr-Xk-Nwt"/>
+                                    <constraint firstItem="Zg6-aG-p83" firstAttribute="top" secondItem="HpM-fg-89k" secondAttribute="bottom" constant="-38" id="bWc-0r-jcK"/>
                                     <constraint firstItem="tMg-DN-1ry" firstAttribute="top" secondItem="o4A-D7-UeV" secondAttribute="bottom" constant="112" id="dLu-dg-kk4"/>
                                     <constraint firstItem="o4A-D7-UeV" firstAttribute="top" secondItem="KAM-8E-MPt" secondAttribute="bottom" constant="8" id="f6L-Af-aeF"/>
                                     <constraint firstAttribute="trailing" secondItem="hKP-G8-ukI" secondAttribute="trailing" id="g0R-Sb-g9q"/>
@@ -199,6 +215,7 @@
                                     <constraint firstItem="2xg-QV-3UD" firstAttribute="top" secondItem="7oC-gq-F6k" secondAttribute="bottom" constant="14" id="mHo-J3-yCB"/>
                                     <constraint firstAttribute="trailing" secondItem="KAM-8E-MPt" secondAttribute="trailing" id="vma-Pk-hOb"/>
                                     <constraint firstItem="gwv-4N-gIs" firstAttribute="leading" secondItem="vcC-Bd-re5" secondAttribute="leading" constant="8" id="xR4-Ot-Bro"/>
+                                    <constraint firstItem="HpM-fg-89k" firstAttribute="trailing" secondItem="o4A-D7-UeV" secondAttribute="trailing" id="zDU-mu-8ll"/>
                                     <constraint firstItem="gwv-4N-gIs" firstAttribute="top" secondItem="2xg-QV-3UD" secondAttribute="bottom" constant="8" id="zzR-uZ-F1N"/>
                                 </constraints>
                             </view>
@@ -212,7 +229,12 @@
                         <viewLayoutGuide key="safeArea" id="Am3-LN-0FZ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Student Information" id="hjE-lh-JJU">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" image="list-view-128" id="Pxq-W7-xuu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Menu" image="list-view-128" id="Pxq-W7-xuu">
+                            <color key="tintColor" red="0.3517770469" green="0.72940140959999999" blue="0.78906279800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="openMenu:" destination="QEv-dv-mn1" id="VA8-O6-xM1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="gradeLevel" destination="wq3-kF-zix" id="fvh-UD-nTJ"/>
@@ -223,6 +245,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I03-Zv-gtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QEv-dv-mn1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="719.53125" y="12.890625"/>
         </scene>
