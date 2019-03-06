@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="ipad12_9rounded" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,16 +18,16 @@
                         <viewControllerLayoutGuide type="bottom" id="mwn-qo-YAb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oB5-q9-3oy">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gradientBg" translatesAutoresizingMaskIntoConstraints="NO" id="Rzo-yh-Ni6">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.35177704691886902" green="0.72940140962600708" blue="0.78906279802322388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOf-UK-Tqy">
-                                <rect key="frame" x="120" y="145" width="528" height="612"/>
+                                <rect key="frame" x="120" y="149" width="784" height="930"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTRUCTOR:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szx-iT-nPh">
                                         <rect key="frame" x="82" y="415" width="118.5" height="21.5"/>
@@ -39,7 +39,7 @@
                                         <rect key="frame" x="221" y="410" width="51" height="31"/>
                                     </switch>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder=" EMAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jGU-Zp-kig" userLabel="Email">
-                                        <rect key="frame" x="82" y="250" width="364" height="30"/>
+                                        <rect key="frame" x="82" y="250" width="620" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="bza-44-qQg"/>
@@ -49,7 +49,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7aO-Hw-Y8L" userLabel="Password">
-                                        <rect key="frame" x="82" y="305" width="364" height="30"/>
+                                        <rect key="frame" x="82" y="305" width="620" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="pz3-E3-kTh"/>
@@ -66,7 +66,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" CONFIRM PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="590-pm-0Kr" userLabel="rePassword">
-                                        <rect key="frame" x="82" y="360" width="364" height="30"/>
+                                        <rect key="frame" x="82" y="360" width="620" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Wyh-q4-Xa3"/>
@@ -76,7 +76,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVk-fT-Zo8">
-                                        <rect key="frame" x="82" y="486.5" width="364" height="33"/>
+                                        <rect key="frame" x="82" y="486.5" width="620" height="33"/>
                                         <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <state key="normal" title="CREATE ACCOUNT">
@@ -154,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvY-06-qMV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45.3125" y="154.1015625"/>
+            <point key="canvasLocation" x="45.1171875" y="153.73352855051243"/>
         </scene>
     </scenes>
     <resources>
