@@ -83,7 +83,7 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="createAccount:" destination="JEN-S3-dcp" eventType="touchUpInside" id="8hN-7j-q8Z"/>
+                                            <action selector="createAccount:" destination="JEN-S3-dcp" eventType="touchUpInside" id="7zh-UJ-CzP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nE9-At-z3H">
@@ -96,7 +96,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="backPressed:" destination="JEN-S3-dcp" eventType="touchUpInside" id="vsF-zS-Wol"/>
+                                            <action selector="backPressed:" destination="JEN-S3-dcp" eventType="touchUpInside" id="QS0-fU-yCx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -144,11 +144,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="jGU-Zp-kig" id="EZO-Sn-inf"/>
-                        <outlet property="isInstructor" destination="4Vd-G1-RRW" id="u4z-MN-ac9"/>
-                        <outlet property="password" destination="7aO-Hw-Y8L" id="z7V-dO-nbB"/>
-                        <outlet property="passwordField" destination="7aO-Hw-Y8L" id="5x9-oc-4XL"/>
-                        <outlet property="rePassword" destination="590-pm-0Kr" id="i2H-bJ-PLD"/>
+                        <outlet property="emailField" destination="jGU-Zp-kig" id="sug-Cb-8GN"/>
+                        <outlet property="isInstructor" destination="4Vd-G1-RRW" id="mOS-Eg-IMn"/>
+                        <outlet property="passwordField" destination="7aO-Hw-Y8L" id="PTe-BC-Jx7"/>
+                        <outlet property="rePassword" destination="590-pm-0Kr" id="a9M-Nf-M2u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VvY-06-qMV" userLabel="First Responder" sceneMemberID="firstResponder"/>

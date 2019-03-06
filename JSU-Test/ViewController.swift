@@ -76,7 +76,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             aLocations.append(ans.frame)
         }
         
-        publishAlert = UIAlertController(title: "Publish", message: "Uploading the quiz will make it available to publish to your classroom. Would you like to continue?", preferredStyle: .actionSheet)
+        publishAlert = UIAlertController(title: "Publish", message: "Uploading the quiz will make it available to publish to your classroom. Would you like to continue?", preferredStyle: .alert)
         
         publishAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
             print("Answers LOC: ",self.aLocations)
@@ -87,6 +87,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }))
         
         publishAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in}))
+        
+        present(publishAlert, animated: true, completion: nil)
     }
     
     //Buttons On the Instructor Menu

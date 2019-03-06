@@ -65,17 +65,7 @@
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="logInPressed:" destination="ue0-Wy-ahf" eventType="touchUpInside" id="BOG-6q-ocx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9B-3x-cQ2" userLabel="newAccount">
-                                        <rect key="frame" x="82" y="446" width="190" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                        <state key="normal" title="New? Create Account!">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="newAccountPressed:" destination="ue0-Wy-ahf" eventType="touchUpInside" id="1in-rI-rl8"/>
+                                            <action selector="logInPressed:" destination="ue0-Wy-ahf" eventType="touchUpInside" id="J4H-Vv-JeG"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emailicon" translatesAutoresizingMaskIntoConstraints="NO" id="Jd1-xG-gGd">
@@ -99,6 +89,16 @@
                                             <constraint firstAttribute="width" constant="25" id="FnL-fd-GMn"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9B-3x-cQ2" userLabel="newAccount">
+                                        <rect key="frame" x="82" y="458" width="190" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                        <state key="normal" title="New? Create Account!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createAccount:" destination="ue0-Wy-ahf" eventType="touchUpInside" id="FU4-h6-bIu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84629470049427247" green="0.84629470049427247" blue="0.84629470049427247" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -147,8 +147,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="LFA-wW-m1f" id="it9-3h-HLp"/>
-                        <outlet property="passwordField" destination="td6-kp-GpT" id="EVC-Ai-JA0"/>
+                        <outlet property="emailField" destination="LFA-wW-m1f" id="7Ih-Xo-bLf"/>
+                        <outlet property="passwordField" destination="td6-kp-GpT" id="wGC-Ek-lSz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Dy-Dy-zSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,7 +157,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BG" width="375" height="667"/>
-        <image name="logInBox" width="375" height="667"/>
+        <image name="Passwordicon" width="91" height="120"/>
+        <image name="emailicon" width="120" height="71"/>
+        <image name="gradientBg" width="1536" height="2048"/>
+        <image name="usericon" width="117" height="117"/>
     </resources>
 </document>
