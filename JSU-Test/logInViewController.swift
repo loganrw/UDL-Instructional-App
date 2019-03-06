@@ -18,6 +18,7 @@ class logInViewController: UIViewController {
     var ref: DatabaseReference!
     var isInstructor = false
     var isNewUser = false
+    var userID: String!
     
     
     @IBAction func newAccountPressed(_ sender: UIButton) {
@@ -27,20 +28,21 @@ class logInViewController: UIViewController {
 
     @IBAction func logInPressed(_ sender: UIButton) {
         if let email = emailField.text, let password = passwordField.text{
-            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (authDataResult: AuthDataResult?, error) in
+                self.userID = authDataResult?.user.uid
                 if let fireBaseError = error{
                     print(fireBaseError.localizedDescription)
                     return
                 }else{
                     self.ref = Database.database().reference()
-                    self.ref?.child("Users").child(user!.uid).child("instructor").observeSingleEvent(of: .value, with: { (snapshot) in
+                    self.ref?.child("Users").child(self.userID).child("instructor").observeSingleEvent(of: .value, with: { (snapshot) in
                         
                         if let item = snapshot.value as? Bool{
                             self.isInstructor = item
                         }
                         
                         if(self.isInstructor){
-                                self.presentStoryboard(boardName: "Main")
+                                self.presentStoryboard(boardName: "MainInstructor")
                             }else{
                                 self.presentStoryboard(boardName: "studentLogIn")
                             }

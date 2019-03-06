@@ -18,10 +18,22 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var trailingC: NSLayoutConstraint!
     var menuVisable = false
     var alert = UIAlertController()
+    var correctAnswerAlert = UIAlertController()
+    var publishAlert = UIAlertController()
     var imageView = UIImageView()
     var imagePicker = UIImagePickerController()
+    var quizBank: [[String]] = []
+    var qLocations: [CGRect] = []
+    var aLocations: [CGRect] = []
+    var questionContainer: [UILabel] = []
+    var answerContainer: [UILabel] = []
+    var questionCount = 0
+    var answerCount = 0
+    var questionAdded = false
+    var answerAdded = false
     let longPress = UILongPressGestureRecognizer(target: self, action: #selector(userLongPress(sender:)))
     let moveGesture = UIPanGestureRecognizer(target: self, action: #selector(userDragged(sender:)))
+    let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(userPinched(sender:)))
     let w = UIScreen.main.bounds.width
     let h = UIScreen.main.bounds.height
     
@@ -46,6 +58,37 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         })
     }
     
+    @IBAction func publishPressed(_ sender: UIButton) {
+        let labels = self.view.subviews.compactMap { $0 as? UILabel }
+        
+        for label in labels {
+            if(label.text?.contains("?") ?? false){
+               questionContainer.append(label)
+            }else{
+               answerContainer.append(label)
+            }
+        }
+        
+        for qs in questionContainer{
+            qLocations.append(qs.frame)
+        }
+        for ans in answerContainer{
+            aLocations.append(ans.frame)
+        }
+        
+        publishAlert = UIAlertController(title: "Publish", message: "Uploading the quiz will make it available to publish to your classroom. Would you like to continue?", preferredStyle: .actionSheet)
+        
+        publishAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
+            print("Answers LOC: ",self.aLocations)
+            print("Questions LOC: ",self.qLocations)
+            print("Quiz Bank",self.quizBank)
+            print("Answers", self.answerContainer)
+            print("Questions", self.questionContainer)
+        }))
+        
+        publishAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in}))
+    }
+    
     //Buttons On the Instructor Menu
     @IBAction func createQuestion(_ sender: UIButton) {
         //print("Question Created")
@@ -55,20 +98,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         questionLabel.textColor = UIColor .black
         questionLabel.addGestureRecognizer(self.longPressGesture())
         questionLabel.addGestureRecognizer(self.movePanGesture())
+        questionLabel.addGestureRecognizer(self.userPinchGesture())
         view.addSubview(questionLabel)
         //Create the prompt for when the user selects the "Add Question" button
-        alert = UIAlertController(title: "Enter an question:", message: nil, preferredStyle: .alert)
+        alert = UIAlertController(title: "Enter question "+(String)(questionCount+1)+":", message: nil, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
             let textField = self.alert.textFields![0] as UITextField
             questionLabel.text = textField.text
-            
+            self.quizBank[self.questionCount][0] = textField.text ?? "Nil"
+            self.questionAdded = true
+            self.questionsEqualAnswers()
         }))
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){(_) in
             questionLabel.removeFromSuperview()
         })
+        
         alert.addTextField{ (textField) in
-            textField.placeholder = "Enter your answer.."
+            textField.placeholder = "Enter your question.."
         }
         
         present(alert, animated: true, completion: nil)
@@ -82,14 +130,24 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         answerLabel.textColor = UIColor .black
         answerLabel.addGestureRecognizer(self.longPressGesture())
         answerLabel.addGestureRecognizer(self.movePanGesture())
+        answerLabel.addGestureRecognizer(self.userPinchGesture())
         view.addSubview(answerLabel)
         //Create the prompt for when the user selects the "Add Answer" button
-        alert = UIAlertController(title: "Enter an answer:", message: nil, preferredStyle: .alert)
+        alert = UIAlertController(title: "Enter answer "+(String)(answerCount+1)+":", message: nil, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
             let textField = self.alert.textFields![0] as UITextField
             answerLabel.text = textField.text
+            self.correctAnswerAlert = UIAlertController(title: "Is this the correct answer to question "+(String)(self.questionCount+1)+"?", message: nil, preferredStyle: .alert)
+            self.correctAnswerAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
+                self.quizBank[self.questionCount][1] = answerLabel.text ?? "Nil"
+                self.answerAdded = true
+                self.questionsEqualAnswers()
+            }))
+            self.correctAnswerAlert.addAction(UIAlertAction(title: "No", style: .cancel){(_) in
+            })
             
+            self.present(self.correctAnswerAlert, animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel){(_) in
             answerLabel.removeFromSuperview()
@@ -110,6 +168,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         randTextField.placeholder = "Enter your message..."
         randTextField.addGestureRecognizer(self.longPressGesture())
         randTextField.addGestureRecognizer(self.movePanGesture())
+        randTextField.addGestureRecognizer(self.userPinchGesture())
         view.addSubview(randTextField)
     }
     
@@ -121,6 +180,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             imageView.isUserInteractionEnabled = true
             imageView.addGestureRecognizer(self.longPressGesture())
             imageView.addGestureRecognizer(self.movePanGesture())
+            imageView.addGestureRecognizer(self.userPinchGesture())
             
             present(imagePicker, animated: true, completion: nil)
         }
@@ -144,6 +204,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     override func viewDidLoad() {
+        initArray()
         self.rootRef = Database.database().reference()
         self.rootRef?.child("Users").child((Auth.auth().currentUser?.uid)!).child("newUser").observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -166,12 +227,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         return mpg
     }
     
+    func userPinchGesture() -> UIPinchGestureRecognizer{
+        let upg = UIPinchGestureRecognizer(target: self, action: #selector(userPinched(sender:)))
+        return upg
+    }
+    
     @objc func userLongPress(sender: UILongPressGestureRecognizer){
         if(sender.state == .began){
             alert = UIAlertController(title: "Remove Item?", message: nil, preferredStyle: .alert)
+            let selectedView = sender.view
+            let val = sender.view?.subviews.compactMap { $0 as? UILabel }
+            print(val)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
-                let selectedView = sender.view
+
                 selectedView?.removeFromSuperview()
             }))
             
@@ -187,7 +256,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let loc = sender.location(in: self.view)
         let selectedView = sender.view
         selectedView?.center = loc
-        
+    }
+    
+    @objc func userPinched(sender: UIPinchGestureRecognizer){
+        sender.view?.transform = (sender.view?.transform)!.scaledBy(x: sender.scale, y: sender.scale)
+        sender.scale = 1.0
     }
     
     
@@ -197,6 +270,25 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let loggedInVC:UIViewController = storyboard.instantiateViewController(withIdentifier: boardName)
         self.present(loggedInVC, animated: true, completion: nil)
     }
+    
+    func initArray(){
+        for index in 0..<1000{
+            quizBank.append([(String)(index)])
+            for sindex in 0..<1{
+                quizBank[index].append((String)(sindex))
+            }
+        }
+    }
+    
+    func questionsEqualAnswers(){
+        
+        if(questionAdded && answerAdded){
+            questionCount += 1
+            answerCount += 1
+            questionAdded = false
+            answerAdded = false
+        }
+    }
+    
 
 }
-

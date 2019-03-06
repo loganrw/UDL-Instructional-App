@@ -13,10 +13,10 @@ import Firebase
 
 class signUpViewController: UIViewController {
 
-    @IBOutlet weak var emailField: logInTextField!
-    @IBOutlet weak var passwordField: logInTextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     //Second feild to verify password
-    @IBOutlet weak var rePassword: logInTextField!
+    @IBOutlet weak var rePassword: UITextField!
     //Use this bool to decide if the user is istructor or a student
     @IBOutlet weak var isInstructor: UISwitch!
 
@@ -30,7 +30,7 @@ class signUpViewController: UIViewController {
  
     @IBAction func createAccount(_ sender: UIButton) {
         if let email = emailField.text, let password = passwordField.text, rePassword.text == passwordField.text{
-            Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (authDataResult: AuthDataResult?, error) in
                 if let fireBaseError = error{
                     let alert = UIAlertController(title: "Error", message: fireBaseError.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -38,7 +38,7 @@ class signUpViewController: UIViewController {
                     return
                 }
                 
-                let uid = user?.uid
+                let uid = authDataResult?.user.uid
                 let values = ["email": self.emailField.text!, "instructor": self.isInstructor.isOn, "newUser": true] as [String : Any]
                 self.registerUserIntoDatabase(uid!, values: values as [String : AnyObject])
                 let alert = UIAlertController(title: "Account Created", message: "You are now able to log in.", preferredStyle: UIAlertControllerStyle.alert)
