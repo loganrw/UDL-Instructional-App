@@ -10,8 +10,8 @@ import UIKit
 import Firebase
 import Photos
 
+
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
     //Pop out menu vars. Control the distance of the pop out.
     @IBOutlet weak var slideView: UIView!
     @IBOutlet weak var leadingC: NSLayoutConstraint!
