@@ -6,9 +6,24 @@ target 'JSU-Test' do
   use_frameworks!
 
   # Pods for JSU-Test
-  pod 'Firebase/Core'
-  pod 'Firebase/Database'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Firestore'
-  pod 'Firebase/Auth'
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
+    pod 'Firebase/Messaging'
+    pod 'Firebase/Database'
+    pod 'Firebase/Invites'
+    pod 'Firebase/DynamicLinks'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    pod 'Firebase/RemoteConfig'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
+    pod 'Firebase/Performance'
+    pod 'Firebase/Firestore'
+    pod 'Firebase/Functions'
+    pod 'Firebase/MLVision'
+    pod 'Firebase/MLVisionLabelModel'
+    pod 'Firebase/MLVisionBarcodeModel'
+    pod 'Firebase/MLVisionTextModel'
+    pod 'Firebase/MLVisionFaceModel'
+
 end

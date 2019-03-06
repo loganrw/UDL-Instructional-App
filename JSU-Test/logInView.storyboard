@@ -157,9 +157,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Passwordicon" width="91" height="120"/>
-        <image name="emailicon" width="120" height="71"/>
-        <image name="gradientBg" width="1536" height="2048"/>
-        <image name="usericon" width="117" height="117"/>
+        <image name="BG" width="375" height="667"/>
+        <image name="logInBox" width="375" height="667"/>
     </resources>
 </document>

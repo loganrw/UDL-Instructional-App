@@ -146,7 +146,6 @@
                     <connections>
                         <outlet property="emailField" destination="jGU-Zp-kig" id="EZO-Sn-inf"/>
                         <outlet property="isInstructor" destination="4Vd-G1-RRW" id="u4z-MN-ac9"/>
-                        <outlet property="p" destination="7aO-Hw-Y8L" id="rGj-dl-a1x"/>
                         <outlet property="password" destination="7aO-Hw-Y8L" id="z7V-dO-nbB"/>
                         <outlet property="passwordField" destination="7aO-Hw-Y8L" id="5x9-oc-4XL"/>
                         <outlet property="rePassword" destination="590-pm-0Kr" id="i2H-bJ-PLD"/>

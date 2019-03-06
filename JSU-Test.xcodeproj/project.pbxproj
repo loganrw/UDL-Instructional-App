@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D18B2A020354E14006E4677 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18B29F20354E14006E4677 /* Model.swift */; };
 		7D440B3B1FE243CF001DC6DE /* logInTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D440B3A1FE243CF001DC6DE /* logInTextField.swift */; };
 		7D4DF92D1FE43665002F681C /* quizView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D4DF92C1FE43665002F681C /* quizView.storyboard */; };
 		7D4DF92F1FE436F8002F681C /* quizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4DF92E1FE436F8002F681C /* quizViewController.swift */; };
@@ -19,10 +18,15 @@
 		7DE069E91FE31D1C000C534F /* signUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE069E81FE31D1C000C534F /* signUp.storyboard */; };
 		7DE069EB1FE32066000C534F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DE069EA1FE32066000C534F /* Assets.xcassets */; };
 		7DE069ED1FE32489000C534F /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE069EC1FE32489000C534F /* signUpViewController.swift */; };
-		802727E01FCFB199002A9A22 /* logInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802727DF1FCFB199002A9A22 /* logInView.storyboard */; };
 		802727E21FCFD98A002A9A22 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802727E11FCFD98A002A9A22 /* logInViewController.swift */; };
 		8059C4A91F99303500049FC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8059C4A71F99303500049FC5 /* ViewController.swift */; };
 		805DC77B1F585228009FB46F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805DC77A1F585228009FB46F /* AppDelegate.swift */; };
+		80757504222911CC008C2757 /* MainInstructorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807574FF222911CB008C2757 /* MainInstructorController.swift */; };
+		80757505222911CC008C2757 /* Roster.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80757500222911CC008C2757 /* Roster.storyboard */; };
+		80757506222911CC008C2757 /* rosterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80757501222911CC008C2757 /* rosterController.swift */; };
+		80757507222911CC008C2757 /* Gradebook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80757502222911CC008C2757 /* Gradebook.storyboard */; };
+		80757508222911CC008C2757 /* MainInstructor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80757503222911CC008C2757 /* MainInstructor.storyboard */; };
+		8075750A2229121B008C2757 /* logInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807575092229121B008C2757 /* logInView.storyboard */; };
 		807CBA842166E5BA005E695E /* studentInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807CBA832166E5BA005E695E /* studentInfo.storyboard */; };
 		807CBA8621679B7A005E695E /* newStudent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807CBA8521679B7A005E695E /* newStudent.storyboard */; };
 		807CBA8821679BAD005E695E /* newInstructor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807CBA8721679BAD005E695E /* newInstructor.storyboard */; };
@@ -34,7 +38,6 @@
 /* Begin PBXFileReference section */
 		4C40F17F764E29042F9D4487 /* Pods-JSU-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSU-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSU-Test/Pods-JSU-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		747FEACEE7DCD06F7C6B7EBA /* Pods-JSU-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSU-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSU-Test/Pods-JSU-Test.release.xcconfig"; sourceTree = "<group>"; };
-		7D18B29F20354E14006E4677 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		7D440B3A1FE243CF001DC6DE /* logInTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInTextField.swift; sourceTree = "<group>"; };
 		7D4DF92C1FE43665002F681C /* quizView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = quizView.storyboard; sourceTree = "<group>"; };
 		7D4DF92E1FE436F8002F681C /* quizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quizViewController.swift; sourceTree = "<group>"; };
@@ -46,12 +49,17 @@
 		7DE069E81FE31D1C000C534F /* signUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = signUp.storyboard; sourceTree = "<group>"; };
 		7DE069EA1FE32066000C534F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DE069EC1FE32489000C534F /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
-		802727DF1FCFB199002A9A22 /* logInView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = logInView.storyboard; sourceTree = "<group>"; };
 		802727E11FCFD98A002A9A22 /* logInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		8059C4A71F99303500049FC5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		805DC7771F585228009FB46F /* JSU-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JSU-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		805DC77A1F585228009FB46F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		805DC7861F585228009FB46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		807574FF222911CB008C2757 /* MainInstructorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInstructorController.swift; sourceTree = "<group>"; };
+		80757500222911CC008C2757 /* Roster.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roster.storyboard; sourceTree = "<group>"; };
+		80757501222911CC008C2757 /* rosterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = rosterController.swift; sourceTree = "<group>"; };
+		80757502222911CC008C2757 /* Gradebook.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Gradebook.storyboard; sourceTree = "<group>"; };
+		80757503222911CC008C2757 /* MainInstructor.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInstructor.storyboard; sourceTree = "<group>"; };
+		807575092229121B008C2757 /* logInView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = logInView.storyboard; sourceTree = "<group>"; };
 		807CBA832166E5BA005E695E /* studentInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = studentInfo.storyboard; sourceTree = "<group>"; };
 		807CBA8521679B7A005E695E /* newStudent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = newStudent.storyboard; sourceTree = "<group>"; };
 		807CBA8721679BAD005E695E /* newInstructor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = newInstructor.storyboard; sourceTree = "<group>"; };
@@ -102,7 +110,6 @@
 		805DC7791F585228009FB46F /* JSU-Test */ = {
 			isa = PBXGroup;
 			children = (
-				7D18B29F20354E14006E4677 /* Model.swift */,
 				80C0042A2170715B001E53C0 /* newUserController.swift */,
 				8059C4A71F99303500049FC5 /* ViewController.swift */,
 				80FEDFF92170909D004BF46E /* studentInfoController.swift */,
@@ -115,7 +122,12 @@
 				807CBA832166E5BA005E695E /* studentInfo.storyboard */,
 				7D62B4CE1FE3C2E5003CCB20 /* studentLogIn.storyboard */,
 				7D4DF92C1FE43665002F681C /* quizView.storyboard */,
-				802727DF1FCFB199002A9A22 /* logInView.storyboard */,
+				80757502222911CC008C2757 /* Gradebook.storyboard */,
+				80757503222911CC008C2757 /* MainInstructor.storyboard */,
+				807574FF222911CB008C2757 /* MainInstructorController.swift */,
+				807575092229121B008C2757 /* logInView.storyboard */,
+				80757500222911CC008C2757 /* Roster.storyboard */,
+				80757501222911CC008C2757 /* rosterController.swift */,
 				807CBA8721679BAD005E695E /* newInstructor.storyboard */,
 				807CBA8521679B7A005E695E /* newStudent.storyboard */,
 				7D644015202CDEC100393966 /* Main.storyboard */,
@@ -179,7 +191,7 @@
 				TargetAttributes = {
 					805DC7761F585228009FB46F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 272P67C2Y8;
+						DevelopmentTeam = LJ4QFX54GT;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -209,16 +221,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				807CBA8821679BAD005E695E /* newInstructor.storyboard in Resources */,
+				80757505222911CC008C2757 /* Roster.storyboard in Resources */,
 				7DE069E91FE31D1C000C534F /* signUp.storyboard in Resources */,
-				802727E01FCFB199002A9A22 /* logInView.storyboard in Resources */,
 				7D62B4CF1FE3C2E5003CCB20 /* studentLogIn.storyboard in Resources */,
 				807CBA8621679B7A005E695E /* newStudent.storyboard in Resources */,
+				80757507222911CC008C2757 /* Gradebook.storyboard in Resources */,
 				7D644016202CDEC100393966 /* Main.storyboard in Resources */,
 				7D4DF92D1FE43665002F681C /* quizView.storyboard in Resources */,
 				807CBA842166E5BA005E695E /* studentInfo.storyboard in Resources */,
+				80757508222911CC008C2757 /* MainInstructor.storyboard in Resources */,
 				7DE069EB1FE32066000C534F /* Assets.xcassets in Resources */,
 				7D51A4A21FDCDA1C00F017E3 /* LaunchScreen.storyboard in Resources */,
 				7D6AE2CE1FE375A700E04D59 /* GoogleService-Info.plist in Resources */,
+				8075750A2229121B008C2757 /* logInView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,13 +319,14 @@
 				80C0042B2170715B001E53C0 /* newUserController.swift in Sources */,
 				80FEDFFA2170909D004BF46E /* studentInfoController.swift in Sources */,
 				8059C4A91F99303500049FC5 /* ViewController.swift in Sources */,
+				80757506222911CC008C2757 /* rosterController.swift in Sources */,
 				7D440B3B1FE243CF001DC6DE /* logInTextField.swift in Sources */,
 				7DE069ED1FE32489000C534F /* signUpViewController.swift in Sources */,
 				7D4DF92F1FE436F8002F681C /* quizViewController.swift in Sources */,
 				7D62B4D11FE3C3A5003CCB20 /* studentViewController.swift in Sources */,
 				805DC77B1F585228009FB46F /* AppDelegate.swift in Sources */,
 				802727E21FCFD98A002A9A22 /* logInViewController.swift in Sources */,
-				7D18B2A020354E14006E4677 /* Model.swift in Sources */,
+				80757504222911CC008C2757 /* MainInstructorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,11 +450,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 272P67C2Y8;
+				DEVELOPMENT_TEAM = LJ4QFX54GT;
 				INFOPLIST_FILE = "JSU-Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "JSU-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "UDL-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -452,11 +468,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 272P67C2Y8;
+				DEVELOPMENT_TEAM = LJ4QFX54GT;
 				INFOPLIST_FILE = "JSU-Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "JSU-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "UDL-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
