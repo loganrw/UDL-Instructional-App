@@ -21,7 +21,6 @@ class signUpViewController: UIViewController {
     @IBOutlet weak var isInstructor: UISwitch!
 
     
-    
     @IBAction func backPressed(_ sender: UIButton) {
         presentStoryboard(boardName: "logInView")
         

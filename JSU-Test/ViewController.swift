@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class ViewController: UIViewController{
     
     //Pop out menu vars. Control the distance of the pop out.
@@ -83,4 +84,5 @@ class ViewController: UIViewController{
     }
 
 }
+
 
