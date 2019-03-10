@@ -19,6 +19,7 @@
 		7DE069EB1FE32066000C534F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DE069EA1FE32066000C534F /* Assets.xcassets */; };
 		7DE069ED1FE32489000C534F /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE069EC1FE32489000C534F /* signUpViewController.swift */; };
 		80110A76222F792500534A57 /* gradeBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80110A75222F792500534A57 /* gradeBook.swift */; };
+		80251CF52232824C0065D6A1 /* newInstructorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80251CF42232824C0065D6A1 /* newInstructorController.swift */; };
 		802727E21FCFD98A002A9A22 /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802727E11FCFD98A002A9A22 /* logInViewController.swift */; };
 		8059C4A91F99303500049FC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8059C4A71F99303500049FC5 /* ViewController.swift */; };
 		805DC77B1F585228009FB46F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805DC77A1F585228009FB46F /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		807CBA842166E5BA005E695E /* studentInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807CBA832166E5BA005E695E /* studentInfo.storyboard */; };
 		807CBA8621679B7A005E695E /* newStudent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807CBA8521679B7A005E695E /* newStudent.storyboard */; };
 		807CBA8821679BAD005E695E /* newInstructor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807CBA8721679BAD005E695E /* newInstructor.storyboard */; };
+		80BDC1D8223263AD00249874 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80BDC1D7223263AD00249874 /* GameKit.framework */; };
 		80C0042B2170715B001E53C0 /* newUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0042A2170715B001E53C0 /* newUserController.swift */; };
 		80FEDFFA2170909D004BF46E /* studentInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FEDFF92170909D004BF46E /* studentInfoController.swift */; };
 		DF23AB7ECD90A0B7347594DC /* Pods_JSU_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE17B192FF3A6503B0AA83E /* Pods_JSU_Test.framework */; };
@@ -51,6 +53,7 @@
 		7DE069EA1FE32066000C534F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DE069EC1FE32489000C534F /* signUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		80110A75222F792500534A57 /* gradeBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gradeBook.swift; sourceTree = "<group>"; };
+		80251CF42232824C0065D6A1 /* newInstructorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newInstructorController.swift; sourceTree = "<group>"; };
 		802727E11FCFD98A002A9A22 /* logInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		8059C4A71F99303500049FC5 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		805DC7771F585228009FB46F /* JSU-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JSU-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +68,8 @@
 		807CBA832166E5BA005E695E /* studentInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = studentInfo.storyboard; sourceTree = "<group>"; };
 		807CBA8521679B7A005E695E /* newStudent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = newStudent.storyboard; sourceTree = "<group>"; };
 		807CBA8721679BAD005E695E /* newInstructor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = newInstructor.storyboard; sourceTree = "<group>"; };
+		80BDC1D62232636A00249874 /* JSU-Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JSU-Test.entitlements"; sourceTree = "<group>"; };
+		80BDC1D7223263AD00249874 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		80C0042A2170715B001E53C0 /* newUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newUserController.swift; sourceTree = "<group>"; };
 		80FEDFF92170909D004BF46E /* studentInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentInfoController.swift; sourceTree = "<group>"; };
 		DCE17B192FF3A6503B0AA83E /* Pods_JSU_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSU_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF23AB7ECD90A0B7347594DC /* Pods_JSU_Test.framework in Frameworks */,
+				80BDC1D8223263AD00249874 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,7 @@
 		805DC7791F585228009FB46F /* JSU-Test */ = {
 			isa = PBXGroup;
 			children = (
+				80BDC1D62232636A00249874 /* JSU-Test.entitlements */,
 				80C0042A2170715B001E53C0 /* newUserController.swift */,
 				8059C4A71F99303500049FC5 /* ViewController.swift */,
 				80FEDFF92170909D004BF46E /* studentInfoController.swift */,
@@ -132,6 +139,7 @@
 				80757500222911CC008C2757 /* Roster.storyboard */,
 				80757501222911CC008C2757 /* rosterController.swift */,
 				807CBA8721679BAD005E695E /* newInstructor.storyboard */,
+				80251CF42232824C0065D6A1 /* newInstructorController.swift */,
 				807CBA8521679B7A005E695E /* newStudent.storyboard */,
 				7D644015202CDEC100393966 /* Main.storyboard */,
 				7D6AE2CD1FE375A700E04D59 /* GoogleService-Info.plist */,
@@ -154,6 +162,7 @@
 		AC0C5DD18D8ADDC163F12C5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80BDC1D7223263AD00249874 /* GameKit.framework */,
 				DCE17B192FF3A6503B0AA83E /* Pods_JSU_Test.framework */,
 			);
 			name = Frameworks;
@@ -194,9 +203,17 @@
 				TargetAttributes = {
 					805DC7761F585228009FB46F = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = LJ4QFX54GT;
+						DevelopmentTeam = RFTM72N69N;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -249,13 +266,24 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JSU-Test/Pods-JSU-Test-resources.sh",
+				"${PODS_ROOT}/FirebaseInvites/Resources/GINInviteResources.bundle",
+				"${PODS_ROOT}/FirebaseInvites/Resources/GPPACLPickerResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVFaceDetectorResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GINInviteResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GPPACLPickerResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVFaceDetectorResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSU-Test/Pods-JSU-Test-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JSU-Test/Pods-JSU-Test-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		418D553AECABC0E61767D5FD /* [CP] Check Pods Manifest.lock */ = {
@@ -282,34 +310,36 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JSU-Test/Pods-JSU-Test-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-JSU-Test/Pods-JSU-Test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSU-Test/Pods-JSU-Test-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JSU-Test/Pods-JSU-Test-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -326,6 +356,7 @@
 				80110A76222F792500534A57 /* gradeBook.swift in Sources */,
 				7D440B3B1FE243CF001DC6DE /* logInTextField.swift in Sources */,
 				7DE069ED1FE32489000C534F /* signUpViewController.swift in Sources */,
+				80251CF52232824C0065D6A1 /* newInstructorController.swift in Sources */,
 				7D4DF92F1FE436F8002F681C /* quizViewController.swift in Sources */,
 				7D62B4D11FE3C3A5003CCB20 /* studentViewController.swift in Sources */,
 				805DC77B1F585228009FB46F /* AppDelegate.swift in Sources */,
@@ -453,13 +484,17 @@
 			baseConfigurationReference = 4C40F17F764E29042F9D4487 /* Pods-JSU-Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JSU-Test/JSU-Test.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LJ4QFX54GT;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RFTM72N69N;
 				INFOPLIST_FILE = "JSU-Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "UDL-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "Logan.JSU-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -471,13 +506,17 @@
 			baseConfigurationReference = 747FEACEE7DCD06F7C6B7EBA /* Pods-JSU-Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JSU-Test/JSU-Test.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = LJ4QFX54GT;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RFTM72N69N;
 				INFOPLIST_FILE = "JSU-Test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "UDL-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = "Logan.JSU-Test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

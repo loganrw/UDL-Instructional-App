@@ -130,8 +130,19 @@
                                 </items>
                                 <color key="barTintColor" red="0.61306313451776651" green="0.2881750872618391" blue="0.2824352400160729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW1-EL-5GQ">
+                                <rect key="frame" x="5" y="977" width="153" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.91794413330000002" green="0.2164713442" blue="0.1959238052" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" backgroundImage="back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ui-wZ-tLU"/>
+                                </connections>
+                            </button>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHa-I8-z0O">
-                                <rect key="frame" x="0.0" y="62" width="768" height="962"/>
+                                <rect key="frame" x="-1" y="71" width="768" height="962"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -141,12 +152,12 @@
                             <bool key="isElement" value="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yHa-I8-z0O" secondAttribute="bottom" id="0eT-5M-ymJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yHa-I8-z0O" secondAttribute="bottom" constant="-9" id="0eT-5M-ymJ"/>
                             <constraint firstItem="0hK-HN-hjf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="1Jl-2c-6uh"/>
-                            <constraint firstItem="yHa-I8-z0O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="4V3-ot-1PE"/>
-                            <constraint firstItem="yHa-I8-z0O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="7OC-6e-q0F"/>
+                            <constraint firstItem="yHa-I8-z0O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-21" id="4V3-ot-1PE"/>
+                            <constraint firstItem="yHa-I8-z0O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="51" id="7OC-6e-q0F"/>
                             <constraint firstItem="0hK-HN-hjf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="Crc-BW-p3u"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yHa-I8-z0O" secondAttribute="trailing" constant="-20" id="dCN-nC-aM1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yHa-I8-z0O" secondAttribute="trailing" constant="-19" id="dCN-nC-aM1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0hK-HN-hjf" secondAttribute="trailing" constant="590" id="lkn-0q-sAI"/>
                         </constraints>
                     </view>
@@ -162,6 +173,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="768" height="1024"/>
         <image name="popoutMenuButton" width="205.71427917480469" height="205.71427917480469"/>
     </resources>
 </document>

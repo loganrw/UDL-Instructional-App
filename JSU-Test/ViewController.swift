@@ -19,18 +19,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var menuVisable = false
     var alert = UIAlertController()
     var correctAnswerAlert = UIAlertController()
+    var quizNameAlert = UIAlertController()
     var publishAlert = UIAlertController()
-    var imageView = UIImageView()
     var imagePicker = UIImagePickerController()
     var quizBank: [[String]] = []
-    var qLocations: [CGRect] = []
-    var aLocations: [CGRect] = []
+    var qLocations: [String] = []
+    var aLocations: [String] = []
     var questionContainer: [UILabel] = []
     var answerContainer: [UILabel] = []
+    var imageContainer = [UIImage]()
+    var imageFrames = [String]()
     var questionCount = 0
     var answerCount = 0
     var questionAdded = false
     var answerAdded = false
+    var quizName = ""
     let longPress = UILongPressGestureRecognizer(target: self, action: #selector(userLongPress(sender:)))
     let moveGesture = UIPanGestureRecognizer(target: self, action: #selector(userDragged(sender:)))
     let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(userPinched(sender:)))
@@ -57,6 +60,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             self.view.layoutIfNeeded()
         })
     }
+    @IBAction func backButton(_ sender: UIButton) {
+        presentStoryboard(boardName: "MainInstructor")
+    }
     
     @IBAction func publishPressed(_ sender: UIButton) {
         let labels = self.view.subviews.compactMap { $0 as? UILabel }
@@ -70,25 +76,49 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
         
         for qs in questionContainer{
-            qLocations.append(qs.frame)
+            
+            qLocations.append(NSStringFromCGRect(qs.frame))
         }
         for ans in answerContainer{
-            aLocations.append(ans.frame)
+            aLocations.append(NSStringFromCGRect(ans.frame))
+        }
+        
+        quizNameAlert = UIAlertController(title: "Quiz Name", message: "Enter the name for your quiz: ", preferredStyle: .alert)
+        
+        quizNameAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
+            
+            let quizText = self.quizNameAlert.textFields![0] as UITextField
+            self.quizName = quizText.text ?? "Nil"
+            self.present(self.publishAlert, animated: true, completion: nil)
+        }))
+        
+        quizNameAlert.addTextField{ (textField) in
+            textField.placeholder = "Name your quiz..."
         }
         
         publishAlert = UIAlertController(title: "Publish", message: "Uploading the quiz will make it available to publish to your classroom. Would you like to continue?", preferredStyle: .alert)
         
         publishAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
-            print("Answers LOC: ",self.aLocations)
-            print("Questions LOC: ",self.qLocations)
-            print("Quiz Bank",self.quizBank)
-            print("Answers", self.answerContainer)
-            print("Questions", self.questionContainer)
+            let user = Auth.auth().currentUser
+            let ref = Database.database().reference().child("Users").child((user!.uid)).child("Uploads")
+            ref.updateChildValues([
+                    "Quiz Bank": self.quizBank,
+                    "Answer Locations": self.aLocations ,
+                    "Question Locations": self.qLocations,
+                    "View Frames": self.imageFrames
+                ])
+            if(self.imageContainer.count > 0){
+                for img in self.imageContainer{
+                    self.uploadImage(img)
+                }
+            }else{
+                print("Empty Image Container")
+            }
+            self.quizName = ""
         }))
         
         publishAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) -> Void in}))
-        
-        present(publishAlert, animated: true, completion: nil)
+        present(quizNameAlert, animated: true, completion: nil)
     }
     
     //Buttons On the Instructor Menu
@@ -176,26 +206,31 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func createImage(_ sender: UIButton) {
         if(UIImagePickerController.isSourceTypeAvailable(.photoLibrary)){
+            
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
             imagePicker.allowsEditing = false
-            imageView.isUserInteractionEnabled = true
-            imageView.addGestureRecognizer(self.longPressGesture())
-            imageView.addGestureRecognizer(self.movePanGesture())
-            imageView.addGestureRecognizer(self.userPinchGesture())
-            
             present(imagePicker, animated: true, completion: nil)
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            self.imageView.contentMode = .scaleAspectFit
-            self.imageView.image = pickedImage
+        if var pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = pickedImage
             imageView.frame = CGRect(x: w / 2, y: h / 2, width: 200, height: 200)
             view.addSubview(imageView)
+            imageView.isUserInteractionEnabled = true
+            imageView.addGestureRecognizer(self.longPressGesture())
+            imageView.addGestureRecognizer(self.movePanGesture())
+            imageView.addGestureRecognizer(self.userPinchGesture())
+            imageFrames.append(NSStringFromCGRect(imageView.frame))
+            pickedImage = pickedImage.resizeWithPercent(percentage: 1.0)!
+            imageContainer.append(pickedImage)
         }
+        
         
         dismiss(animated: true, completion: nil)
     }
@@ -239,7 +274,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             alert = UIAlertController(title: "Remove Item?", message: nil, preferredStyle: .alert)
             let selectedView = sender.view
             let val = sender.view?.subviews.compactMap { $0 as? UILabel }
-            print(val)
+            print(val!)
             
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
 
@@ -274,10 +309,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     func initArray(){
-        for index in 0..<1000{
-            quizBank.append([(String)(index)])
-            for sindex in 0..<1{
-                quizBank[index].append((String)(sindex))
+        for index in 0..<25{
+            quizBank.append([""])
+            for _ in 0..<1{
+                quizBank[index].append("")
             }
         }
     }
@@ -292,5 +327,45 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         }
     }
     
+    static func removeFromDB(child: String) {
+        
+        let ref = Database.database().reference()
+        
+        ref.removeValue { error, _ in
+            
+            print(error!)
+        }
+    }
+    
+    func uploadImage(_ image: UIImage){
+        
+        let imageName:String = (self.quizName+".png")
+        //Store the image in a folder with users id
+        let storageRef = Storage.storage().reference().child((Auth.auth().currentUser?.uid)!).child(imageName)
+        if let uploadData = UIImagePNGRepresentation(image){
+            storageRef.putData(uploadData, metadata: nil
+                , completion: { (metadata, error) in
+                    if error != nil {
+                        print("error")
+                        return
+                    }
+                })
+            
+            }
+        }
 
+}
+
+extension UIImage {
+    func resizeWithPercent(percentage: CGFloat) -> UIImage? {
+        let imageView = UIImageView(frame: CGRect(origin: .zero, size: CGSize(width: size.width * percentage, height: size.height * percentage)))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = self
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else { return nil }
+        imageView.layer.render(in: context)
+        guard let result = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return result
+    }
 }

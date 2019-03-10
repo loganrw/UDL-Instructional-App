@@ -27,10 +27,15 @@ class studentInfoController: UIViewController{
             let userInfo = snapshot.value as! [String: Any]
             self.studentName.text = userInfo["studentName"] as? String
             self.gradeLevel.text = userInfo["gradeLevel"] as? String
-            self.studentNumber.text = userInfo["userID"] as? String
             self.schoolName.text = userInfo["schoolName"] as? String
             
+            
         })
+        self.ref.child("Users").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            let userInfo = snapshot.value as! [String: Any]
+
+        })
+        
     }
 
     @IBAction func backButton(_ sender: UIButton) {

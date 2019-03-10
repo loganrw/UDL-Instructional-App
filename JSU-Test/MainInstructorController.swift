@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class MainInstructorController:  UIViewController {
     
+    var rootRef: DatabaseReference!
+    let user = Auth.auth().currentUser
 
     @IBAction func getRoster(_ sender: UIButton) {
         presentStoryboard(boardName: "Roster")
@@ -48,7 +50,17 @@ class MainInstructorController:  UIViewController {
     }
     
     
-    
+    override func viewDidLoad() {
+        self.rootRef = Database.database().reference()
+        self.rootRef?.child("Users").child((Auth.auth().currentUser?.uid)!).child("newUser").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let item = snapshot.value as? Bool{
+                if item == true{
+                    self.presentStoryboard(boardName: "newInstructor")
+                }
+            }
+        })
+    }
     
     
     
