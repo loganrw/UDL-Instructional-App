@@ -21,16 +21,42 @@ class studentInfoController: UIViewController{
     let user = Auth.auth().currentUser
     let ref = Database.database().reference()
     
+    var menuVisable = false;
+    @IBOutlet weak var leadingC: NSLayoutConstraint!
+    @IBOutlet weak var trailingC: NSLayoutConstraint!
+    
+    @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
+        if(!menuVisable){
+            leadingC.constant = 250
+            trailingC.constant = -250
+            menuVisable = true
+            
+        }else{
+            leadingC.constant = -20
+            trailingC.constant = -20
+            menuVisable = false
+        }
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations:{
+            self.view.layoutIfNeeded()
+        })
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         self.ref.child("Users").child(user!.uid).child("values").observeSingleEvent(of: .value, with: { (snapshot) in
             
             let userInfo = snapshot.value as! [String: Any]
             self.studentName.text = userInfo["studentName"] as? String
             self.gradeLevel.text = userInfo["gradeLevel"] as? String
-            self.studentNumber.text = userInfo["userID"] as? String
             self.schoolName.text = userInfo["schoolName"] as? String
             
+            
         })
+        self.ref.child("Users").child(user!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            let userInfo = snapshot.value as! [String: Any]
+
+        })
+        
     }
 
     @IBAction func backButton(_ sender: UIButton) {

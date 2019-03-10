@@ -20,18 +20,12 @@ class newUserController: UIViewController{
     
     
     @IBAction func submitNewStudent(_ sender: Any) {
-        let uuid = UUID().uuidString
         let ref = Database.database().reference().child("Users").child((user!.uid))
-        ref.updateChildValues([
-            "values": [
-                "studentName": studentName.text!,
-                "info": info.text!,
-                "schoolName": schoolName.text!,
-                "gradeLevel": gradeLevel.text!,
-                "userID": uuid
-            ]
-            ])
         ref.child("newUser").setValue(false)
+        ref.child("hasInstructor").setValue(false)
+        ref.child("schoolName").setValue(schoolName.text)
+        ref.child("studentName").setValue(studentName.text)
+        ref.child("gradeLevel").setValue(gradeLevel.text)
         let alert = UIAlertController(title: "Thank You!", message: "You are now able to use your account.", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{ action in switch action.style{

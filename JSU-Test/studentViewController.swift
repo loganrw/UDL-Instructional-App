@@ -12,12 +12,16 @@ import Firebase
 
 class studentViewController: UIViewController {
     
+<<<<<<< HEAD
+=======
     
     @IBOutlet weak var studentView: UIView!
     @IBOutlet weak var leadingC: NSLayoutConstraint!
     @IBOutlet weak var trailingC: NSLayoutConstraint!
-    var menuVisable = false;
+    var menuVisable = false
+    var instructorAdded = false
     
+>>>>>>> 1e85bfe9539e794b4c0c801a21b18c8c70ede9c8
     var rootRef: DatabaseReference!
     
     
@@ -26,10 +30,16 @@ class studentViewController: UIViewController {
         self.presentStoryboard(boardName: "logInView")
     }
     
-    @IBAction func menuButtonPressed(_ sender: Any) {
-        if(!menuVisable){
-            leadingC.constant = 150
-            trailingC.constant = -150
+    var menuVisable = false;
+    @IBOutlet weak var studentView: UIView!
+    @IBOutlet weak var trailingC: NSLayoutConstraint!
+    @IBOutlet weak var leadingC: NSLayoutConstraint!
+    
+    
+    @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
+    if(!menuVisable){
+            leadingC.constant = 250
+            trailingC.constant = -250
             menuVisable = true
             
         }else{
@@ -37,6 +47,7 @@ class studentViewController: UIViewController {
             trailingC.constant = -20
             menuVisable = false
         }
+    
         
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations:{
             self.view.layoutIfNeeded()
@@ -62,9 +73,34 @@ class studentViewController: UIViewController {
                 }
             }
         })
-    }
-    
-
+        
+        self.rootRef?.child("Users").child((Auth.auth().currentUser?.uid)!).child("hasInstructor").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+                if let item = snapshot.value as? Bool{
+                    if item == false{
+                        let instructorAlert = UIAlertController(title: "Add Instrcutor", message: "Enter your instructors Course Code to be added to their classroom.", preferredStyle: .alert)
+                        instructorAlert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (action) -> Void in
+                            let textField = instructorAlert.textFields![0] as UITextField
+                            self.rootRef.child("Users").queryOrdered(byChild: "classCode").queryEqual(toValue: textField.text)
+                                .observeSingleEvent(of: .value, with: {(snapshot: DataSnapshot) in
+                                    
+                                    if snapshot.exists() {
+                                        self.rootRef.child("classCode").setValue(textField.text)
+                                    }
+                                    else {
+                                        print("FALSE")
+                                    }
+                                })
+                        }))
+            
+                        instructorAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel){(_) in})
+            
+                        instructorAlert.addTextField{ (textField) in
+                            textField.placeholder = "Enter your instructors code.."
+                        }
+                        self.present(instructorAlert, animated: true, completion: nil)
+                    }}})
+        }
     
     func presentStoryboard(boardName: String){
         let storyboard:UIStoryboard = UIStoryboard(name: boardName, bundle: nil)

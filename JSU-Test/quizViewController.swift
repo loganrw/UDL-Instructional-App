@@ -14,8 +14,6 @@ class quizViewController: UIViewController {
 
 
     @IBOutlet weak var questionField: UITextField!
-    @IBOutlet weak var leadingC: NSLayoutConstraint!
-    @IBOutlet weak var trailingC: NSLayoutConstraint!
     @IBOutlet weak var answer0: UIButton!
     @IBOutlet weak var answer1: UIButton!
     @IBOutlet weak var answer2: UIButton!
@@ -38,8 +36,6 @@ class quizViewController: UIViewController {
         checkAnswer(idx: 3)
     }
     
-    
-    var menuVisable = false;
     
     struct Question {
         let question: String
@@ -75,13 +71,14 @@ class quizViewController: UIViewController {
         loadNextQuestion()
     }
     
-
-
-
+    var menuVisable = false;
+    @IBOutlet weak var leadingC: NSLayoutConstraint!
+    @IBOutlet weak var trailingC: NSLayoutConstraint!
+  
     @IBAction func menuButtonPressed(_ sender: UIButton) {
         if(!menuVisable){
-            leadingC.constant = 150
-            trailingC.constant = -150
+            leadingC.constant = 250
+            trailingC.constant = -250
             menuVisable = true
             
         }else{

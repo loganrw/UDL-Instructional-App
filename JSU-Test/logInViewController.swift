@@ -21,7 +21,8 @@ class logInViewController: UIViewController {
     var userID: String!
     
     
-    @IBAction func newAccountPressed(_ sender: UIButton) {
+
+    @IBAction func createAccount(_ sender: UIButton) {
         self.presentStoryboard(boardName: "signUp")
     }
   

@@ -8,10 +8,35 @@
 
 import Foundation
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class MainInstructorController:  UIViewController {
     
+<<<<<<< HEAD
+    var menuVisable = false;
+    @IBOutlet weak var trailingC: NSLayoutConstraint!
+    @IBOutlet weak var leadingC: NSLayoutConstraint!
+    
+    @IBAction func menuButtonPressed(_ sender: UIBarButtonItem) {
+    if(!menuVisable){
+            leadingC.constant = 250
+            trailingC.constant = 0
+            menuVisable = true
+            
+        }else{
+            leadingC.constant = 0
+            trailingC.constant = 0
+            menuVisable = false
+        }
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations:{
+            self.view.layoutIfNeeded()
+        })
+    }
+=======
+    var rootRef: DatabaseReference!
+    let user = Auth.auth().currentUser
+>>>>>>> 1e85bfe9539e794b4c0c801a21b18c8c70ede9c8
 
     @IBAction func getRoster(_ sender: UIButton) {
         presentStoryboard(boardName: "Roster")
@@ -48,7 +73,17 @@ class MainInstructorController:  UIViewController {
     }
     
     
-    
+    override func viewDidLoad() {
+        self.rootRef = Database.database().reference()
+        self.rootRef?.child("Users").child((Auth.auth().currentUser?.uid)!).child("newUser").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let item = snapshot.value as? Bool{
+                if item == true{
+                    self.presentStoryboard(boardName: "newInstructor")
+                }
+            }
+        })
+    }
     
     
     
