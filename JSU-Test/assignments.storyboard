@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Assignments-->
+        <scene sceneID="XGa-kN-pdA">
+            <objects>
+                <viewController storyboardIdentifier="assignments" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UpC-nh-Gku" customClass="assignments" customModule="JSU_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNu-Q8-4ee">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUJ-R3-dI7">
+                                <rect key="frame" x="45" y="159" width="175" height="35"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="VCZ-8a-Fa8"/>
+                                    <constraint firstAttribute="width" constant="175" id="ofc-a0-aGB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Roster">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOO-tU-5DT">
+                                <rect key="frame" x="45" y="359" width="175" height="35"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="bw5-Ye-KGO"/>
+                                    <constraint firstAttribute="height" constant="35" id="qu4-se-hNK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Feedback/Report">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4i-ea-7Kv">
+                                <rect key="frame" x="45" y="259" width="175" height="35"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="BF0-Rp-a4i"/>
+                                    <constraint firstAttribute="width" constant="175" id="cNH-jH-m3f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Messages">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13A-i3-nTA">
+                                <rect key="frame" x="45" y="550" width="175" height="35"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="EI6-r1-dcE"/>
+                                    <constraint firstAttribute="width" constant="175" id="XmV-lH-v4a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCS-Am-GfR">
+                                <rect key="frame" x="45" y="209" width="175" height="35"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="AeO-Mf-igU"/>
+                                    <constraint firstAttribute="width" constant="175" id="OOr-dN-4sp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Gradebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsC-PU-Rg7">
+                                <rect key="frame" x="45" y="309" width="175" height="35"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Fhk-yj-fqW"/>
+                                    <constraint firstAttribute="width" constant="175" id="wDH-RM-R0X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Quiz Lab">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIY-OJ-S3V">
+                                <rect key="frame" x="45" y="104" width="175" height="36"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="EGI-7f-efc"/>
+                                    <constraint firstAttribute="width" constant="175" id="SAH-pj-PoM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llb-Bt-Apl" userLabel="Assignments">
+                                <rect key="frame" x="45" y="409" width="175" height="35"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="4fe-V8-7G9"/>
+                                    <constraint firstAttribute="height" constant="35" id="crC-JH-Pn3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Assignments">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZt-kH-QgW">
+                                <rect key="frame" x="0.0" y="30" width="768" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="768" id="1gN-oo-HcJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="M4Q-ea-zOt"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="list-view-128" id="M5O-PW-nQh">
+                                        <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <connections>
+                                            <action selector="menuButtonPressed:" destination="UpC-nh-Gku" id="lqj-jB-iqT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.3517770469" green="0.72940140959999999" blue="0.78906279800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnX-NE-0MT">
+                                <rect key="frame" x="0.0" y="90" width="768" height="900"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OwR-fi-LvF">
+                                        <rect key="frame" x="142.5" y="68" width="484" height="595"/>
+                                        <color key="backgroundColor" red="0.3517770469" green="0.72940140959999999" blue="0.78906279800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="484" id="I9X-g4-O87"/>
+                                            <constraint firstAttribute="height" constant="595" id="Iiu-qH-lwY"/>
+                                        </constraints>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFM-LN-AKI">
+                                        <rect key="frame" x="275" y="722" width="219" height="71"/>
+                                        <color key="backgroundColor" red="0.3517770469" green="0.72940140959999999" blue="0.78906279800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="71" id="7VO-Jp-2Xm"/>
+                                            <constraint firstAttribute="width" constant="219" id="kco-G8-MxI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                        <state key="normal" title="Add Assignment">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="OwR-fi-LvF" firstAttribute="top" secondItem="rnX-NE-0MT" secondAttribute="top" constant="68" id="Kbo-8y-mfH"/>
+                                    <constraint firstItem="CFM-LN-AKI" firstAttribute="top" secondItem="OwR-fi-LvF" secondAttribute="bottom" constant="59" id="b8f-Jo-Pm5"/>
+                                    <constraint firstAttribute="height" constant="900" id="eVo-DW-eUl"/>
+                                    <constraint firstItem="OwR-fi-LvF" firstAttribute="centerX" secondItem="CFM-LN-AKI" secondAttribute="centerX" id="efL-qh-yRL"/>
+                                    <constraint firstItem="CFM-LN-AKI" firstAttribute="leading" secondItem="rnX-NE-0MT" secondAttribute="leading" constant="275" id="i88-8e-eM3"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPy-Gf-BQR">
+                                <rect key="frame" x="294" y="37" width="181" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Kxe-d5-dBE"/>
+                                    <constraint firstAttribute="width" constant="181" id="OYK-yC-dPt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3517770469" green="0.72940140959999999" blue="0.78906279800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rCS-Am-GfR" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" constant="45" id="461-XJ-0k5"/>
+                            <constraint firstItem="llb-Bt-Apl" firstAttribute="top" secondItem="VOO-tU-5DT" secondAttribute="bottom" constant="15" id="8Ip-RM-YUE"/>
+                            <constraint firstItem="BsC-PU-Rg7" firstAttribute="top" secondItem="c4i-ea-7Kv" secondAttribute="bottom" constant="15" id="93n-Nj-yha"/>
+                            <constraint firstItem="13A-i3-nTA" firstAttribute="top" secondItem="VOO-tU-5DT" secondAttribute="bottom" constant="156" id="9s4-hp-vtU"/>
+                            <constraint firstItem="c4i-ea-7Kv" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" constant="45" id="DZn-M9-E5P"/>
+                            <constraint firstItem="IPy-Gf-BQR" firstAttribute="top" secondItem="iUc-Bt-gjU" secondAttribute="top" constant="17" id="EKF-ID-f7j"/>
+                            <constraint firstItem="llb-Bt-Apl" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" constant="45" id="F7T-0a-XMf"/>
+                            <constraint firstItem="VOO-tU-5DT" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" constant="45" id="Fr8-fZ-amM"/>
+                            <constraint firstItem="rCS-Am-GfR" firstAttribute="top" secondItem="HUJ-R3-dI7" secondAttribute="bottom" constant="15" id="Qmz-sA-tSd"/>
+                            <constraint firstItem="13A-i3-nTA" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" constant="45" id="TeP-4u-Vdn"/>
+                            <constraint firstItem="HUJ-R3-dI7" firstAttribute="top" secondItem="aIY-OJ-S3V" secondAttribute="bottom" constant="19" id="cJ0-M9-F6J"/>
+                            <constraint firstItem="HUJ-R3-dI7" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" constant="45" id="cOZ-se-rD4"/>
+                            <constraint firstItem="rnX-NE-0MT" firstAttribute="trailing" secondItem="iUc-Bt-gjU" secondAttribute="trailing" id="d27-qH-fGF"/>
+                            <constraint firstItem="rnX-NE-0MT" firstAttribute="top" secondItem="TZt-kH-QgW" secondAttribute="bottom" constant="10" id="fi1-UG-fUx"/>
+                            <constraint firstItem="TZt-kH-QgW" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" id="iEh-ro-dX9"/>
+                            <constraint firstItem="c4i-ea-7Kv" firstAttribute="top" secondItem="rCS-Am-GfR" secondAttribute="bottom" constant="15" id="iKa-iU-xP5"/>
+                            <constraint firstItem="IPy-Gf-BQR" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" constant="294" id="lrf-xt-vdb"/>
+                            <constraint firstItem="TZt-kH-QgW" firstAttribute="top" secondItem="iUc-Bt-gjU" secondAttribute="top" constant="10" id="ox4-pA-FL2"/>
+                            <constraint firstItem="rnX-NE-0MT" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" id="oyw-uY-1Kt"/>
+                            <constraint firstItem="BsC-PU-Rg7" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" constant="45" id="tv7-Ae-eXh"/>
+                            <constraint firstItem="aIY-OJ-S3V" firstAttribute="top" secondItem="TZt-kH-QgW" secondAttribute="bottom" constant="24" id="txl-a6-guD"/>
+                            <constraint firstItem="aIY-OJ-S3V" firstAttribute="leading" secondItem="iUc-Bt-gjU" secondAttribute="leading" constant="45" id="uV6-Tp-rKN"/>
+                            <constraint firstItem="VOO-tU-5DT" firstAttribute="top" secondItem="BsC-PU-Rg7" secondAttribute="bottom" constant="15" id="wLc-1P-yw8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iUc-Bt-gjU"/>
+                    </view>
+                    <connections>
+                        <outlet property="leadingC" destination="oyw-uY-1Kt" id="T8i-O3-3z4"/>
+                        <outlet property="trailingC" destination="d27-qH-fGF" id="A7E-bj-tNG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAS-cx-hk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263.28125" y="-99.0234375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list-view-128" width="96" height="96"/>
+    </resources>
+</document>
